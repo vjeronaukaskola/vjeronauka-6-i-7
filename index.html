@@ -1,0 +1,928 @@
+<!doctype html>
+<html lang="bs"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Moja vjeronauka • 6. i 7. razred</title><style>
+:root{--ink:#193b35;--green:#17664e;--paper:#f5f3eb;--line:#dce3da;--muted:#63736d}*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.65 system-ui, sans-serif}button,input,select{font:inherit}button,select{cursor:pointer}button{border:1px solid var(--line);border-radius:12px;background:white;color:var(--ink);padding:11px 20px;font-weight:650}button:hover{border-color:var(--green);background:#eef5ed}button:disabled{cursor:default;opacity:.6}button.primary{background:var(--green);color:white;border-color:var(--green)}input,select{padding:12px;border:1px solid #b7c7bd;border-radius:10px;background:white;color:var(--ink);max-width:100%}label{display:block;font-size:14px;font-weight:650}input:focus-visible,button:focus-visible,select:focus-visible,a:focus-visible{outline:3px solid #c79738;outline-offset:3px}h1,h2,h3,p{margin-top:0}h1{font:700 clamp(30px,4vw,47px)/1.15 Georgia,serif;margin-bottom:18px}h2{font:700 27px/1.3 Georgia,serif}h3{font-size:18px}small,.muted{color:var(--muted)}.shell{max-width:1120px;margin:auto;padding:28px}.top{display:flex;justify-content:space-between;align-items:center;gap:15px;margin-bottom:30px}.brand{font-weight:800;letter-spacing:-.5px}.brand b{display:inline-grid;place-items:center;background:var(--green);color:white;border-radius:12px;width:42px;height:42px;margin-right:12px}.eyebrow{font-size:12px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:var(--green);margin-bottom:13px}.hero{display:grid;grid-template-columns:1fr 280px;gap:35px;align-items:center;margin:36px 0}.hero p{max-width:660px}.stamp{border:1px solid #cdd9cb;border-radius:24px;background:#e7eddf;padding:25px;text-align:center}.stamp strong{display:block;font:700 58px Georgia,serif}.selectors{display:grid;grid-template-columns:1fr 2fr;gap:20px;background:white;border:1px solid var(--line);padding:20px;border-radius:18px}.selectors select{display:block;width:100%;margin-top:6px}nav{display:flex;gap:8px;flex-wrap:wrap;margin:25px 0}nav button[aria-pressed=true]{background:var(--ink);color:white}.card{background:white;border:1px solid var(--line);border-radius:20px;padding:28px;margin-bottom:18px}.grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}.grid .card{margin:0}.tag{display:inline-block;background:#eaf2e6;border-radius:7px;padding:3px 10px;font-size:12px;font-weight:700}.row{display:flex;gap:12px;align-items:center;flex-wrap:wrap;justify-content:space-between}.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px}.options{display:grid;gap:12px;margin:20px 0}.option{text-align:left;display:flex;gap:14px;align-items:center;font-weight:500}.option span{background:#eff2ec;border-radius:8px;padding:3px 10px;font-weight:700}.option.selected{border:2px solid var(--green);background:#e9f3ec}.correct{background:#e7f3e9!important;border-color:#438956!important}.wrong{background:#fff0ed!important;border-color:#b45a48!important}.feedback{border-left:4px solid var(--green);padding:12px 16px;background:#eff5eb;border-radius:6px;margin-top:16px}.error{color:#9b382b}.progress{height:7px;background:#e5ebe3;border-radius:10px;overflow:hidden;margin:18px 0 25px}.progress i{display:block;background:#b59447;height:100%}blockquote{margin:20px 0;font:22px/1.8 Georgia,serif}.fill{line-height:3.4;margin:22px 0}.fill input{width:130px;margin:3px;padding:5px 9px}.login{max-width:460px;margin:7vh auto}.login input{width:100%;margin:6px 0 16px}.login button{width:100%}footer{font-size:12px;color:var(--muted);padding:30px 0}.score{font:700 60px Georgia,serif;color:var(--green)}[hidden]{display:none!important}@media(max-width:700px){.shell{padding:18px}.hero{grid-template-columns:1fr;gap:10px;margin:24px 0}.stamp{display:none}.selectors,.grid{grid-template-columns:1fr}.card{padding:20px}nav button{flex:1;padding:10px 12px}h1{font-size:34px}.top{margin-bottom:16px}.fill input{width:110px}}
+</style></head><body><div class="shell"><header class="top"><div class="brand"><b>م</b>Moja vjeronauka</div><button id="logout" hidden>Odjava</button></header>
+<section id="login" class="card login"><div class="eyebrow">Dobro došli</div><h1>Znanje raste<br>svakim korakom.</h1><p class="muted">Vježbaj, razmisli i provjeri naučeno.</p><form id="loginForm"><label for="username">Korisničko ime</label><input id="username" autocomplete="username" required><label for="password">Lozinka</label><input id="password" type="password" autocomplete="current-password" required><button class="primary">Prijavi se</button><p id="loginError" class="error" role="alert"></p></form><small>Lokalna testna verzija • 6. i 7. razred</small></section>
+<main id="app" hidden><section class="hero"><div><div class="eyebrow">Uči svojim tempom</div><h1 id="lessonTitle"></h1><p class="muted" id="intro"></p></div><aside class="stamp"><span>Znanje za svaki dan</span><strong id="gradeBadge">6.</strong><span>razred · islamska vjeronauka</span></aside></section>
+<div class="selectors"><label for="book">Udžbenici<select id="book"><option value="6">Islamska vjeronauka — 6. razred</option><option value="7">Islamska vjeronauka — 7. razred</option></select></label><label for="lesson">Lekcije<select id="lesson"></select></label></div>
+<nav aria-label="Rubrike"><button data-tab="summary" aria-pressed="true">Sažetak</button><button data-tab="quiz" aria-pressed="false">Kviz · 40 pitanja</button><button data-tab="quotes" aria-pressed="false">Ajeti i hadisi</button><button data-tab="fill" aria-pressed="false">Dopuni</button></nav><div id="content"></div></main><footer>Pripremljeno prema odabranim stranicama udžbenika. Za učenje i ponavljanje, bez vremenskog ograničenja.</footer></div>
+<script>
+const DATA={
+  "6": {
+    "title": "Moje potrebe i težnje",
+    "pages": "6–9",
+    "summary": [
+      [
+        "Novi početak",
+        "Hana želi razumjeti sebe i druge, postati samostalnija i prepoznati svoje potrebe. Porodica joj savjetuje iskren nijjet, umjerenost, trud, postavljanje ciljeva i pažljiv izbor prijatelja. Posao počinjemo Bismillom, a djela se prosuđuju prema namjeri."
+      ],
+      [
+        "Svijetu se ne može ugoditi",
+        "Nasrudin Hodža i njegov sin dobijaju primjedbe šta god učinili s magarcem. Pouka je da ne možemo ugoditi svim ljudima: trebamo tražiti Allahovo zadovoljstvo, slušati savjest i istrajati u dobru. Savjete promišljamo i sagledavamo njihove posljedice."
+      ],
+      [
+        "Najvažnije: ravnoteža potreba",
+        "Tijelu trebaju hrana, piće, odjeća, kretanje i odmor. Srcu, duši i umu trebaju vjera, prijateljstvo, ljubav, uspjeh, obrazovanje i lijepo ponašanje. Potrebama udovoljavamo pravilno i s mjerom. Napor i znanje pomažu nam razlikovati korisno od štetnog."
+      ],
+      [
+        "Primijeni naučeno",
+        "Postavi dobar cilj, uloži trud i uči dovu. U izborima traži Božije zadovoljstvo i sreću na ovom i budućem svijetu. Ne prihvataj štetan postupak samo da bi se svidio drugima."
+      ]
+    ],
+    "quotes": [
+      [
+        "Hadis o namjeri",
+        "Djela se prosuđuju prema namjeri (nijjetu) i svako će imati ono što je naumio.",
+        "str. 7"
+      ],
+      [
+        "Poslanikova dova",
+        "Allahu moj, Tvojoj milosti se nadam i ne prepuštaj me samoj sebi ni koliko je treptaj oka. Popravi svako moje stanje, nema Boga osim tebe.",
+        "str. 7; oblik naveden u udžbeniku"
+      ],
+      [
+        "Dova — u udžbeniku označena kao hadis",
+        "Bože otvori mi vrata Svoje milosti i olakšaj mi vrata Tvoje opskrbe.",
+        "str. 9"
+      ]
+    ],
+    "questions": [
+      {
+        "q": "Ko piše pismo prijateljici u tekstu „Novi početak”?",
+        "options": [
+          "Hana",
+          "Amina",
+          "Hanina mama"
+        ],
+        "source": "str. 6",
+        "focus": false
+      },
+      {
+        "q": "U koji razred Hana polazi?",
+        "options": [
+          "Šesti",
+          "Sedmi",
+          "Osmi"
+        ],
+        "source": "str. 6",
+        "focus": false
+      },
+      {
+        "q": "Na šta nana podsjeća Hanu?",
+        "options": [
+          "Da ne zaboravi Milostivog Allaha",
+          "Da odbaci sve savjete",
+          "Da misli samo na odjeću"
+        ],
+        "source": "str. 6",
+        "focus": false
+      },
+      {
+        "q": "Šta dedo povezuje s početkom posla?",
+        "options": [
+          "Božije ime i iskren nijjet",
+          "Žurbu i nadmetanje",
+          "Samo tuđe pohvale"
+        ],
+        "source": "str. 6",
+        "focus": false
+      },
+      {
+        "q": "Kakav odnos prema ljudima mama savjetuje?",
+        "options": [
+          "Voljeti ih bez interesa",
+          "Voljeti samo korisne prijatelje",
+          "Uvijek očekivati nagradu"
+        ],
+        "source": "str. 6",
+        "focus": false
+      },
+      {
+        "q": "Šta babo savjetuje o uspjehu?",
+        "options": [
+          "Postaviti ciljeve i truditi se",
+          "Čekati da dođe sam",
+          "Odustati od ambicija"
+        ],
+        "source": "str. 6",
+        "focus": false
+      },
+      {
+        "q": "Na šta upozorava stariji brat?",
+        "options": [
+          "Na izbor prijatelja i utjecaj drugih",
+          "Na izbjegavanje svakog druženja",
+          "Na obavezno oponašanje vršnjaka"
+        ],
+        "source": "str. 6",
+        "focus": false
+      },
+      {
+        "q": "Šta Hana želi bolje razumjeti?",
+        "options": [
+          "Sebe i druge",
+          "Samo školski raspored",
+          "Samo tuđe greške"
+        ],
+        "source": "str. 6",
+        "focus": false
+      },
+      {
+        "q": "Kako treba početi posao prema lekciji?",
+        "options": [
+          "Bismillom",
+          "Hvalisanjem",
+          "Bez ikakve namjere"
+        ],
+        "source": "str. 7",
+        "focus": false
+      },
+      {
+        "q": "Prema čemu se prosuđuju djela u navedenom hadisu?",
+        "options": [
+          "Prema namjeri",
+          "Prema odjeći",
+          "Prema popularnosti"
+        ],
+        "source": "str. 7",
+        "focus": false
+      },
+      {
+        "q": "Šta znači nijjet?",
+        "options": [
+          "Namjera",
+          "Odmor",
+          "Imovina"
+        ],
+        "source": "str. 7",
+        "focus": false
+      },
+      {
+        "q": "Šta Hana traži u dovi?",
+        "options": [
+          "Allahovu milost i popravljanje svoga stanja",
+          "Da uvijek bude najpopularnija",
+          "Da nikad ne treba učiti"
+        ],
+        "source": "str. 6–7",
+        "focus": false
+      },
+      {
+        "q": "Ko sinu pokazuje da se svijetu ne može ugoditi?",
+        "options": [
+          "Nasrudin Hodža",
+          "El-Gazali",
+          "Hanin dedo"
+        ],
+        "source": "str. 8",
+        "focus": true
+      },
+      {
+        "q": "Čije zadovoljstvo vjernik treba nastojati zadobiti?",
+        "options": [
+          "Allahovo zadovoljstvo",
+          "Odobravanje svakog prolaznika",
+          "Samo zadovoljstvo najglasnijeg čovjeka"
+        ],
+        "source": "str. 8",
+        "focus": true
+      },
+      {
+        "q": "Šta Nasrudin uzima kao unutrašnju smjernicu za postupanje?",
+        "options": [
+          "Savjest",
+          "Želju za slavom",
+          "Strah od svake primjedbe"
+        ],
+        "source": "str. 8",
+        "focus": true
+      },
+      {
+        "q": "Zašto Nasrudin vodi sina u drugo selo?",
+        "options": [
+          "Da mu primjerom pokaže pouku",
+          "Da ga nauči trgovati",
+          "Da izbjegnu sve ljude"
+        ],
+        "source": "str. 8",
+        "focus": true
+      },
+      {
+        "q": "Ko je na početku puta jahao magarca?",
+        "options": [
+          "Otac",
+          "Sin",
+          "Obojica"
+        ],
+        "source": "str. 8",
+        "focus": true
+      },
+      {
+        "q": "Šta prvi prolaznik zamjera?",
+        "options": [
+          "Otac jaše dok dijete pješači",
+          "Obojica pješače",
+          "Obojica jašu"
+        ],
+        "source": "str. 8",
+        "focus": true
+      },
+      {
+        "q": "Šta drugi prolaznik govori kada sin jaše?",
+        "options": [
+          "Da je trebalo dati prednost ocu",
+          "Da otac mora nositi magarca",
+          "Da obojica trebaju trčati"
+        ],
+        "source": "str. 8",
+        "focus": true
+      },
+      {
+        "q": "Šta prolaznik zamjera kada obojica jašu?",
+        "options": [
+          "Da opterećuju slabašnu životinju",
+          "Da previše odmaraju",
+          "Da ne znaju put"
+        ],
+        "source": "str. 8",
+        "focus": true
+      },
+      {
+        "q": "Šta se događa kada obojica krenu pješice?",
+        "options": [
+          "Ljudi pitaju zašto ne jašu",
+          "Svi ih prestaju kritikovati",
+          "Magarac ostaje u selu"
+        ],
+        "source": "str. 8",
+        "focus": true
+      },
+      {
+        "q": "Koji postupak, prema Nasrudinovim riječima, još nisu probali?",
+        "options": [
+          "Nositi magarca",
+          "Jahati obojica",
+          "Pješačiti obojica"
+        ],
+        "source": "str. 8",
+        "focus": true
+      },
+      {
+        "q": "Koja je glavna pouka priče o Nasrudinu?",
+        "options": [
+          "Ne možemo ugoditi svim ljudima",
+          "Svaka kritika je ispravna",
+          "Najvažnije je stalno mijenjati odluku"
+        ],
+        "source": "str. 8",
+        "focus": true
+      },
+      {
+        "q": "Na čemu Nasrudin traži da sin istraje?",
+        "options": [
+          "Na dobru",
+          "Na dokazivanju da je uvijek u pravu",
+          "Na udovoljavanju svakom prolazniku"
+        ],
+        "source": "str. 8",
+        "focus": true
+      },
+      {
+        "q": "Šta treba razmotriti prije prihvatanja savjeta?",
+        "options": [
+          "Njegove posljedice i korisnost",
+          "Samo koliko je savjet popularan",
+          "Samo glasnoću savjetnika"
+        ],
+        "source": "str. 8, primjena pouke",
+        "focus": true
+      },
+      {
+        "q": "Šta pomaže razlikovati korisno od štetnog?",
+        "options": [
+          "Napor i stjecanje znanja",
+          "Slijepo oponašanje",
+          "Odgađanje razmišljanja"
+        ],
+        "source": "str. 9",
+        "focus": true
+      },
+      {
+        "q": "Zašto su čovjeku date sklonosti, želje i težnje, prema lekciji?",
+        "options": [
+          "Da osjeti potrebe i teži njihovom ostvarenju",
+          "Da uvijek udovoljava drugima",
+          "Da zanemari sve obaveze"
+        ],
+        "source": "str. 9",
+        "focus": true
+      },
+      {
+        "q": "Koji niz sadrži tjelesne potrebe?",
+        "options": [
+          "Hrana, piće i odmor",
+          "Vjera, ljubav i prijateljstvo",
+          "Obrazovanje, uspjeh i lijepo ponašanje"
+        ],
+        "source": "str. 9",
+        "focus": true
+      },
+      {
+        "q": "Koja je od navedenih potreba tjelesna?",
+        "options": [
+          "Kretanje",
+          "Prijateljstvo",
+          "Obrazovanje"
+        ],
+        "source": "str. 9",
+        "focus": true
+      },
+      {
+        "q": "Koja je od navedenih potreba srca, duše i uma?",
+        "options": [
+          "Vjera",
+          "Piće",
+          "Odjeća"
+        ],
+        "source": "str. 9",
+        "focus": true
+      },
+      {
+        "q": "Gdje lekcija svrstava obrazovanje?",
+        "options": [
+          "Među potrebe srca, duše i uma",
+          "Samo među potrebe tijela",
+          "Među nepotrebne želje"
+        ],
+        "source": "str. 9",
+        "focus": true
+      },
+      {
+        "q": "Gdje lekcija svrstava lijepo ponašanje?",
+        "options": [
+          "Među potrebe srca, duše i uma",
+          "Među prehrambene potrebe",
+          "Među prepreke uspjehu"
+        ],
+        "source": "str. 9",
+        "focus": true
+      },
+      {
+        "q": "Kakav odnos treba uspostaviti između tjelesnih i duhovnih potreba?",
+        "options": [
+          "Ravnotežu",
+          "Potpuno zanemariti tijelo",
+          "Potpuno zanemariti dušu"
+        ],
+        "source": "str. 9",
+        "focus": true
+      },
+      {
+        "q": "Kako treba udovoljavati potrebama?",
+        "options": [
+          "Pravilno i s mjerom",
+          "Bez granica",
+          "Samo prema tuđim očekivanjima"
+        ],
+        "source": "str. 9",
+        "focus": true
+      },
+      {
+        "q": "Koji kriterij musliman uvažava pri ostvarenju potreba?",
+        "options": [
+          "Postizanje Božijeg zadovoljstva",
+          "Sticanje pohvale po svaku cijenu",
+          "Udovoljavanje svakoj želji"
+        ],
+        "source": "str. 9",
+        "focus": true
+      },
+      {
+        "q": "Na kojim svjetovima se spominje ostvarenje sreće?",
+        "options": [
+          "Na ovom i budućem svijetu",
+          "Samo na ovom svijetu",
+          "Samo u mašti"
+        ],
+        "source": "str. 9",
+        "focus": true
+      },
+      {
+        "q": "S kakvim nijjetom lekcija poziva na dovu?",
+        "options": [
+          "Da se ostvare dobre želje",
+          "Da nadmašimo druge u hvalisanju",
+          "Da uspijemo bez ikakva truda"
+        ],
+        "source": "str. 9",
+        "focus": true
+      },
+      {
+        "q": "Šta se traži riječima „Bože otvori mi vrata…”?",
+        "options": [
+          "Allahove milosti i opskrbe",
+          "Popularnosti i slave",
+          "Putovanja i zabave"
+        ],
+        "source": "str. 9",
+        "focus": true
+      },
+      {
+        "q": "Učenik uči, odmara se i njeguje prijateljstva. Šta time razvija?",
+        "options": [
+          "Ravnotežu različitih potreba",
+          "Zanemarivanje duhovnih potreba",
+          "Pretjerivanje u odmoru"
+        ],
+        "source": "str. 9, primjena pouke",
+        "focus": true
+      },
+      {
+        "q": "Prijatelji traže da učiniš nešto štetno kako bi te prihvatili. Šta je u skladu s poukom?",
+        "options": [
+          "Odbiti štetno i istrajati u dobru",
+          "Pristati zbog tuđeg odobravanja",
+          "Postupati bez razmišljanja"
+        ],
+        "source": "str. 8–9, primjena pouke",
+        "focus": true
+      }
+    ]
+  },
+  "7": {
+    "title": "Prirodno je težiti uspjehu",
+    "pages": "6–8",
+    "summary": [
+      [
+        "Uspjeh uključuje srce i razum",
+        "Uspjeh je ostvarenje željenog cilja. Srce daje duhovnu snagu, a razum pomaže procijeniti posljedice naših izbora. Potpuno zadovoljstvo povezano je s uvjerenjem da je Allah zadovoljan našim postupkom."
+      ],
+      [
+        "Gazali i vrijednost znanja",
+        "Nakon što razbojnik uništi njegove knjige, Gazali shvata da mu ono što dobro nauči niko ne može oduzeti. Život posvećuje učenju, poučavanju i pisanju. Priča naglašava usvojeno znanje i njegovu primjenu."
+      ],
+      [
+        "Najvažnije: put ka uspjehu",
+        "Brini o zdravlju, razvijaj suosjećanje i komunikaciju, njeguj iskren nijjet, budi ustrajan i preuzmi odgovornost za odluke. Potrebni su hrabrost, odlučnost, oslanjanje na Allaha i molba za Njegovu pomoć."
+      ],
+      [
+        "Prepreke trebaju poučavati",
+        "Prekomjeran strah od neuspjeha, odgađanje i pretjerana samokritika otežavaju napredak. Uči iz grešaka, odredi gdje si sada i napravi plan do cilja. Dobra djela vode Allahovom zadovoljstvu i nagradi na budućem svijetu."
+      ]
+    ],
+    "quotes": [
+      [
+        "Hadis o učenjaku",
+        "Prednost učenjaka nad pobožnjakom je kao i prednost punog mjeseca nad ostalim zvijezdama.",
+        "str. 7"
+      ],
+      [
+        "Ajet — Junus, 26 (odlomak iz udžbenika)",
+        "One koji čine dobra djela čeka nagrada, i više od toga...!",
+        "str. 7"
+      ],
+      [
+        "Hadis o traženju znanja",
+        "Ko bude išao putem traženja znanja, Allah će ga uputiti na jedan od džennetskih puteva.",
+        "str. 7"
+      ],
+      [
+        "Hadis — savjet mladiću",
+        "Mladiću, ja ću te poučiti nekoliko veoma bitnih riječi: Pazi na Allaha i On će na tebe paziti, pazi na Allaha pa ćeš Ga naći uvijek u svojoj blizini (kako te pomaže). Ako budeš od koga nešto tražio, traži samo od Allaha, a ako tražiš pomoć, onda je samo od Allaha traži.",
+        "str. 8; prenosi Ibn Abbas, r.a."
+      ],
+      [
+        "Dova — prijevod iz udžbenika",
+        "Bože, učini me strpljivim, učini me zahvalnim, učini me u mojim očima malehnim, a u očima svijeta velikim. Bože, daj mi vjerovanje, koje se pokolebati ne može, daj mi uvjerenje iza koga nema nevjerstva i daj mi milost kojom ću postići slavu Tvoje počasti na ovom i budućem svijetu!",
+        "str. 8"
+      ],
+      [
+        "Hadis o časti znanja",
+        "Znanje je najveća čast.",
+        "str. 8"
+      ]
+    ],
+    "questions": [
+      {
+        "q": "Kako lekcija opisuje težnju ka uspjehu?",
+        "options": [
+          "Kao prirodnu težnju svakog čovjeka",
+          "Kao osobinu samo odraslih",
+          "Kao želju koju treba odbaciti"
+        ],
+        "source": "str. 6",
+        "focus": false
+      },
+      {
+        "q": "Kada čovjek smatra da je uspio?",
+        "options": [
+          "Kada ostvari željeni cilj",
+          "Kada izbjegne svaki trud",
+          "Kada prestane postavljati ciljeve"
+        ],
+        "source": "str. 6",
+        "focus": false
+      },
+      {
+        "q": "Šta treba uključiti na putu ka uspjehu?",
+        "options": [
+          "Srce i razum",
+          "Samo želju za pohvalama",
+          "Samo sreću"
+        ],
+        "source": "str. 6",
+        "focus": false
+      },
+      {
+        "q": "Kakvu ulogu ima srce prema uvodu lekcije?",
+        "options": [
+          "Daje duhovnu snagu",
+          "Zamjenjuje svako razmišljanje",
+          "Uklanja potrebu za trudom"
+        ],
+        "source": "str. 6",
+        "focus": false
+      },
+      {
+        "q": "U čemu razum pomaže?",
+        "options": [
+          "U procjeni korisnih i štetnih posljedica",
+          "U izbjegavanju odgovornosti",
+          "U traženju izgovora"
+        ],
+        "source": "str. 6",
+        "focus": false
+      },
+      {
+        "q": "S čime lekcija povezuje potpuni osjećaj sreće?",
+        "options": [
+          "S uvjerenjem da je Allah zadovoljan našim postupkom",
+          "S posjedovanjem najviše novca",
+          "S pohvalama svih ljudi"
+        ],
+        "source": "str. 6",
+        "focus": false
+      },
+      {
+        "q": "Ko je glavni lik priče o vrijednosti znanja?",
+        "options": [
+          "Muhammed el-Gazali",
+          "Nasrudin Hodža",
+          "Ibn Abbas"
+        ],
+        "source": "str. 6",
+        "focus": false
+      },
+      {
+        "q": "Zašto majka šalje Gazalija u veći grad?",
+        "options": [
+          "Da stekne više znanja",
+          "Da napusti knjige",
+          "Da postane vođa karavane"
+        ],
+        "source": "str. 6",
+        "focus": false
+      },
+      {
+        "q": "Šta razbojnik radi s Gazalijevim knjigama?",
+        "options": [
+          "Cijepa ih i razbacuje",
+          "Pažljivo ih prepisuje",
+          "Poklanja mu nove"
+        ],
+        "source": "str. 7",
+        "focus": false
+      },
+      {
+        "q": "Zašto Gazali plače?",
+        "options": [
+          "Zbog uništenih knjiga",
+          "Zbog izgubljene odjeće",
+          "Zbog propuštenog odmora"
+        ],
+        "source": "str. 7",
+        "focus": false
+      },
+      {
+        "q": "Šta Gazali shvata nakon susreta s razbojnikom?",
+        "options": [
+          "Dobro naučeno znanje niko mu ne može oduzeti",
+          "Da više ne treba učiti",
+          "Da su knjige beskorisne"
+        ],
+        "source": "str. 7",
+        "focus": false
+      },
+      {
+        "q": "Čime Gazali pokazuje da je usvojio pouku?",
+        "options": [
+          "Uči, poučava druge i piše knjige",
+          "Prestaje se školovati",
+          "Sakriva sve što zna"
+        ],
+        "source": "str. 7",
+        "focus": false
+      },
+      {
+        "q": "Čemu vode dobra djela prema rubrici „Pamti i primjenjuj”?",
+        "options": [
+          "Allahovom zadovoljstvu i nagradi na budućem svijetu",
+          "Samo ugledu među ljudima",
+          "Životu bez odgovornosti"
+        ],
+        "source": "str. 7",
+        "focus": true
+      },
+      {
+        "q": "Šta čeka one koji čine dobra djela u navedenom ajetu?",
+        "options": [
+          "Nagrada i više od toga",
+          "Samo prolazna pohvala",
+          "Zaborav njihovog truda"
+        ],
+        "source": "str. 7",
+        "focus": true
+      },
+      {
+        "q": "Iz koje sure je navedeni ajet o nagradi za dobra djela?",
+        "options": [
+          "Junus, 26",
+          "El-Fatiha, 1",
+          "El-Ihlas, 4"
+        ],
+        "source": "str. 7",
+        "focus": true
+      },
+      {
+        "q": "Čime hadis poredi prednost učenjaka nad pobožnjakom?",
+        "options": [
+          "Prednošću punog mjeseca nad ostalim zvijezdama",
+          "Prednošću imetka nad zdravljem",
+          "Prednošću putnika nad domaćinom"
+        ],
+        "source": "str. 7",
+        "focus": true
+      },
+      {
+        "q": "Kuda Allah upućuje onoga ko ide putem traženja znanja?",
+        "options": [
+          "Na jedan od džennetskih puteva",
+          "Na put odustajanja",
+          "Na put hvalisanja"
+        ],
+        "source": "str. 7",
+        "focus": true
+      },
+      {
+        "q": "Koja je navika važna na putu ka uspjehu?",
+        "options": [
+          "Brinuti se o zdravlju",
+          "Zanemariti san i odmor",
+          "Ignorisati potrebe tijela"
+        ],
+        "source": "str. 8",
+        "focus": true
+      },
+      {
+        "q": "Koji odnos prema drugima lekcija preporučuje?",
+        "options": [
+          "Suosjećanje i razumijevanje",
+          "Ravnodušnost",
+          "Stalno nadmetanje"
+        ],
+        "source": "str. 8",
+        "focus": true
+      },
+      {
+        "q": "Koju društvenu vještinu treba razvijati?",
+        "options": [
+          "Komunikaciju i druženje",
+          "Izbjegavanje razgovora",
+          "Prekidanje drugih dok govore"
+        ],
+        "source": "str. 8",
+        "focus": true
+      },
+      {
+        "q": "Kakve namjere trebaju pratiti uspjeh?",
+        "options": [
+          "Iskrene i plemenite",
+          "Sebične po svaku cijenu",
+          "Usmjerene samo na pohvale"
+        ],
+        "source": "str. 8",
+        "focus": true
+      },
+      {
+        "q": "Kako se odnositi prema trudu i ishodu?",
+        "options": [
+          "Biti ustrajan i očekivati pozitivan ishod",
+          "Odustati nakon prvog pokušaja",
+          "Unaprijed očekivati samo neuspjeh"
+        ],
+        "source": "str. 8",
+        "focus": true
+      },
+      {
+        "q": "Za šta trebamo preuzeti odgovornost?",
+        "options": [
+          "Za vlastite odluke i postupke",
+          "Samo za tuđe greške",
+          "Samo za uspješne rezultate"
+        ],
+        "source": "str. 8",
+        "focus": true
+      },
+      {
+        "q": "Koje osobine lekcija posebno navodi?",
+        "options": [
+          "Hrabrost, odlučnost i ustrajnost",
+          "Oholost, zavist i brzopletost",
+          "Ravnodušnost, lijenost i strah"
+        ],
+        "source": "str. 8",
+        "focus": true
+      },
+      {
+        "q": "Na koga se oslanjamo i od koga tražimo pomoć i zaštitu?",
+        "options": [
+          "Na Allaha",
+          "Samo na vlastitu popularnost",
+          "Samo na slučajnost"
+        ],
+        "source": "str. 8",
+        "focus": true
+      },
+      {
+        "q": "Koja je prepreka uspjehu navedena u tekstu?",
+        "options": [
+          "Prekomjeran strah i briga od neuspjeha",
+          "Razuman plan",
+          "Učenje iz iskustva"
+        ],
+        "source": "str. 8",
+        "focus": true
+      },
+      {
+        "q": "Kako odgađanje aktivnosti djeluje na uspjeh?",
+        "options": [
+          "Predstavlja prepreku",
+          "Uvijek ga ubrzava",
+          "Zamjenjuje trud"
+        ],
+        "source": "str. 8",
+        "focus": true
+      },
+      {
+        "q": "Koja samokritika se navodi kao prepreka?",
+        "options": [
+          "Pretjerana samokritika",
+          "Mirno uočavanje greške",
+          "Iskrena procjena rada"
+        ],
+        "source": "str. 8",
+        "focus": true
+      },
+      {
+        "q": "Kako strah od prethodne greške može djelovati?",
+        "options": [
+          "Može nas spriječiti da pokušamo ponovo",
+          "Uvijek garantuje uspjeh",
+          "Uklanja potrebu za učenjem"
+        ],
+        "source": "str. 8",
+        "focus": true
+      },
+      {
+        "q": "Šta bi prepreke trebale činiti?",
+        "options": [
+          "Poučavati nas",
+          "Zaustaviti svaki pokušaj",
+          "Učiniti trud besmislenim"
+        ],
+        "source": "str. 8",
+        "focus": true
+      },
+      {
+        "q": "Koji stav tekst ohrabruje?",
+        "options": [
+          "Ja to znam, ja to mogu",
+          "Ja ništa ne mogu promijeniti",
+          "Bolje je nikada ne pokušati"
+        ],
+        "source": "str. 8",
+        "focus": true
+      },
+      {
+        "q": "Ko prenosi savjet Poslanika naveden na osmoj stranici?",
+        "options": [
+          "Ibn Abbas",
+          "Nasrudin Hodža",
+          "Gazalijev brat"
+        ],
+        "source": "str. 8",
+        "focus": true
+      },
+      {
+        "q": "Kako počinje ključni savjet mladiću u hadisu?",
+        "options": [
+          "Pazi na Allaha i On će na tebe paziti",
+          "Čekaj da drugi sve urade",
+          "Ne postavljaj sebi ciljeve"
+        ],
+        "source": "str. 8",
+        "focus": true
+      },
+      {
+        "q": "Od koga se u navedenom hadisu traži pomoć?",
+        "options": [
+          "Od Allaha",
+          "Od slučajnosti",
+          "Od vlastite slave"
+        ],
+        "source": "str. 8",
+        "focus": true
+      },
+      {
+        "q": "Za koje se osobine moli u dovi?",
+        "options": [
+          "Strpljivost i zahvalnost",
+          "Oholost i nadmoć",
+          "Zavist i osvetoljubivost"
+        ],
+        "source": "str. 8",
+        "focus": true
+      },
+      {
+        "q": "Kakvo vjerovanje se traži u dovi?",
+        "options": [
+          "Vjerovanje koje se pokolebati ne može",
+          "Vjerovanje ovisno samo o pohvalama",
+          "Vjerovanje bez iskrenosti"
+        ],
+        "source": "str. 8",
+        "focus": true
+      },
+      {
+        "q": "Koja izjava o znanju je navedena u rubrici „Razmisli i uradi”?",
+        "options": [
+          "Znanje je najveća čast",
+          "Znanje vrijedi samo uz bogatstvo",
+          "Znanje treba skrivati od drugih"
+        ],
+        "source": "str. 8",
+        "focus": true
+      },
+      {
+        "q": "Kako zadatak na kraju lekcije predlaže rad na cilju?",
+        "options": [
+          "Označiti gdje si sada i napraviti plan do cilja",
+          "Samo zamisliti cilj bez plana",
+          "Prepustiti sve drugima"
+        ],
+        "source": "str. 8",
+        "focus": true
+      },
+      {
+        "q": "Nakon lošeg rezultata učenik prouči greške i pokuša ponovo. Šta primjenjuje?",
+        "options": [
+          "Prepreke ga poučavaju i ostaje ustrajan",
+          "Odgađanje svih obaveza",
+          "Pretjerani strah od pokušaja"
+        ],
+        "source": "str. 8, primjena pouke",
+        "focus": true
+      },
+      {
+        "q": "Kako pomoći prijatelju koji govori „Ja to ne mogu”?",
+        "options": [
+          "Ohrabriti ga i pomoći mu napraviti prve korake",
+          "Ismijati njegov strah",
+          "Savjetovati mu da zauvijek odustane"
+        ],
+        "source": "str. 8, primjena pouke",
+        "focus": true
+      }
+    ]
+  }
+};
+const $=s=>document.querySelector(s), esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const shuffle=a=>{a=[...a];for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a};
+let grade='6', tab='summary', runs={}, fillState=null;
+const current=()=>DATA[grade];
+$('#loginForm').onsubmit=e=>{e.preventDefault();if($('#username').value.trim()==='ucenik'&&$('#password').value==='Vjeronauka67!'){$('#login').hidden=true;$('#app').hidden=false;$('#logout').hidden=false;$('#password').value='';updateBook()}else $('#loginError').textContent='Korisničko ime ili lozinka nisu ispravni.'};
+$('#logout').onclick=()=>{$('#app').hidden=true;$('#logout').hidden=true;$('#login').hidden=false;$('#loginError').textContent='';runs={};fillState=null;$('#username').focus()};
+$('#book').onchange=e=>{grade=e.target.value;fillState=null;updateBook()};$('#lesson').onchange=()=>render();
+document.querySelectorAll('[data-tab]').forEach(b=>b.onclick=()=>{tab=b.dataset.tab;render()});
+function updateBook(){const d=current();$('#lessonTitle').textContent=d.title;$('#intro').textContent=`${grade}. razred · stranice ${d.pages}. Sažetak, 40 pitanja i vježbe za razumijevanje najvažnijih poruka lekcije.`;$('#gradeBadge').textContent=grade+'.';$('#lesson').innerHTML=`<option>${esc(d.title)} · str. ${d.pages}</option>`;render()}
+function render(){document.querySelectorAll('[data-tab]').forEach(b=>b.setAttribute('aria-pressed',b.dataset.tab===tab));if(tab==='summary')summary();if(tab==='quiz')quiz();if(tab==='quotes')quotes();if(tab==='fill')fill()}
+function summary(){$('#content').innerHTML=`<div class="row" style="margin-bottom:18px"><h2>Razumij prije nego odgovoriš.</h2><span class="tag">Stranice ${current().pages}</span></div><div class="grid">${current().summary.map((s,i)=>`<article class="card"><div class="eyebrow">0${i+1} / ${i>=2?'Zapamti i primijeni':'Pročitaj i razumij'}</div><h3>${esc(s[0])}</h3><p>${esc(s[1])}</p></article>`).join('')}</div><div class="card" style="margin-top:18px"><strong>Spreman/spremna za provjeru?</strong><p class="muted">28 od 40 pitanja posvećeno je završnom dijelu, važnim poukama i njihovoj primjeni.</p><button class="primary" id="start">Započni kviz</button></div>`;$('#start').onclick=()=>{tab='quiz';render()}}
+function newRun(){return {items:current().questions.map(q=>({...q,choices:shuffle(q.options)})),answers:Array(40).fill(null),checked:Array(40).fill(false),index:0,done:false}}
+function quiz(){if(!runs[grade])runs[grade]=newRun();const r=runs[grade];if(r.done){results();return}const i=r.index,q=r.items[i],checked=r.checked[i];$('#content').innerHTML=`<section class="card"><div class="row"><span class="eyebrow">Pitanje ${i+1} / 40</span><span class="tag">${q.focus?'Najvažnije pouke':'Razumijevanje teksta'}</span></div><div class="progress"><i style="width:${(i+1)/40*100}%"></i></div><h2>${esc(q.q)}</h2><div class="options">${q.choices.map((a,j)=>`<button class="option ${r.answers[i]===a?'selected':''} ${checked&&a===q.options[0]?'correct':''} ${checked&&r.answers[i]===a&&a!==q.options[0]?'wrong':''}" data-answer="${j}" ${checked?'disabled':''} aria-pressed="${r.answers[i]===a}"><span>${'ABC'[j]}</span>${esc(a)}</button>`).join('')}</div>${checked?`<div class="feedback" role="status"><strong>${r.answers[i]===q.options[0]?'Tačno!':'Pokušaj zapamtiti ovu poruku.'}</strong><br>Tačan odgovor: ${esc(q.options[0])}<br><small>Udžbenik, ${esc(q.source)}.</small></div>`:''}<div class="actions"><button id="prev" ${i===0?'disabled':''}>← Prethodno</button>${checked?`<button class="primary" id="next">${i===39?'Pogledaj rezultat':'Sljedeće →'}</button>`:`<button class="primary" id="check" ${r.answers[i]===null?'disabled':''}>Provjeri odgovor</button>`}</div><p class="muted" style="margin-top:18px;font-size:13px">Jedan tačan odgovor po pitanju. Rezultat računa prvi provjereni odgovor.</p></section>`;document.querySelectorAll('[data-answer]').forEach(b=>b.onclick=()=>{r.answers[i]=q.choices[+b.dataset.answer];quiz()});$('#prev').onclick=()=>{r.index--;quiz()};if($('#check'))$('#check').onclick=()=>{r.checked[i]=true;quiz()};if($('#next'))$('#next').onclick=()=>{if(i===39){r.done=true;results()}else{r.index++;quiz()}}}
+function results(){const r=runs[grade],wrong=r.items.map((q,i)=>i).filter(i=>r.answers[i]!==r.items[i].options[0]),score=40-wrong.length;$('#content').innerHTML=`<section class="card"><div class="eyebrow">Tvoj rezultat</div><div class="score">${score} / 40</div><h2>${score===40?'Odlično, sve je tačno!':'Svaki pokušaj je prilika za učenje.'}</h2><p>Tačno ${Math.round(score/40*100)}% odgovora. ${wrong.length?'Pročitaj odgovore za pitanja koja treba ponoviti.':'Sve važne poruke uspješno su ponovljene.'}</p><button class="primary" id="retry">Ponovi kviz</button></section>${wrong.map(i=>`<article class="card"><h3>${i+1}. ${esc(r.items[i].q)}</h3><p>Tvoj odgovor: ${esc(r.answers[i]||'Bez odgovora')}</p><p><strong>Tačno: ${esc(r.items[i].options[0])}</strong></p><small>Udžbenik, ${esc(r.items[i].source)}.</small></article>`).join('')}`;$('#retry').onclick=()=>{runs[grade]=newRun();quiz()}}
+function quotes(){$('#content').innerHTML=`<h2>Ajeti, hadisi i dove</h2><p class="muted">${grade==='6'?'Na stranicama 6–9 nema izdvojenog ajeta. Ispod su hadisi i dove navedeni u lekciji.':'Navodi i prijevodi prema udžbeniku, stranice 6–8.'}</p>${current().quotes.map(q=>`<article class="card"><span class="tag">${esc(q[0])}</span><blockquote>„${esc(q[1])}”</blockquote><small>Udžbenik, ${esc(q[2])}.</small></article>`).join('')}`}
+const norm=s=>s.toLocaleLowerCase('bs').normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/đ/g,'dj').replace(/[^a-z0-9]/g,'');
+function fill(){const quotes=current().quotes;if(!fillState)fillState={quote:0,count:2,tokens:[],holes:[],values:{},checked:false,reveal:false};const f=fillState;$('#content').innerHTML=`<section class="card"><div class="eyebrow">Vježbaj prisjećanje</div><h2>Dopuni izostavljene riječi</h2><p class="muted">Odaberi 2–15 praznina. Za kraće navode koristi se najviše onoliko praznina koliko tekst ima riječi. Pri provjeri se prihvataju velika i mala slova te unos bez kvačica.</p><div class="selectors"><label for="quoteSelect">Tekst<select id="quoteSelect">${quotes.map((q,i)=>`<option value="${i}" ${i===f.quote?'selected':''}>${esc(q[0])}</option>`).join('')}</select></label><label for="count">Broj izostavljenih riječi <output id="countLabel">${f.count}</output><input id="count" style="width:100%" type="range" min="2" max="15" value="${f.count}"></label></div><div class="actions"><button class="primary" id="makeFill">Nova vježba</button></div><div id="exercise"></div></section>`;$('#count').oninput=e=>{f.count=+e.target.value;$('#countLabel').textContent=f.count};$('#quoteSelect').onchange=e=>{f.quote=+e.target.value;makeFill()};$('#makeFill').onclick=makeFill;if(!f.tokens.length)makeFill();else drawFill()}
+function makeFill(){const f=fillState;f.tokens=current().quotes[f.quote][1].split(/\s+/);const eligible=f.tokens.map((w,i)=>norm(w)?i:null).filter(i=>i!==null);f.holes=shuffle(eligible).slice(0,Math.min(f.count,eligible.length)).sort((a,b)=>a-b);f.values={};f.checked=false;f.reveal=false;drawFill()}
+function drawFill(){const f=fillState,q=current().quotes[f.quote];$('#exercise').innerHTML=`<p class="muted">${esc(q[0])} · ${esc(q[2])} · ${f.holes.length} praznina</p><div class="fill">${f.tokens.map((w,i)=>f.holes.includes(i)?`<input aria-label="Izostavljena riječ ${f.holes.indexOf(i)+1}" data-hole="${i}" value="${esc(f.values[i]||'')}" autocomplete="off" spellcheck="false" ${f.checked?'disabled':''} class="${f.checked?(norm(f.values[i]||'')===norm(w)?'correct':'wrong'):''}">`:esc(w)).join(' ')}</div><div class="actions"><button class="primary" id="checkFill" ${f.checked?'disabled':''}>Provjeri dopunu</button><button id="reveal">Prikaži tekst</button></div><div id="fillFeedback" aria-live="polite">${f.checked?`<div class="feedback">Tačno ${f.holes.filter(i=>norm(f.values[i]||'')===norm(f.tokens[i])).length} od ${f.holes.length}.${f.holes.filter(i=>norm(f.values[i]||'')!==norm(f.tokens[i])).map(i=>`<div>Praznina ${f.holes.indexOf(i)+1}: <strong>${esc(f.tokens[i])}</strong></div>`).join('')}</div>`:''}${f.reveal?`<blockquote>${esc(q[1])}</blockquote>`:''}</div>`;document.querySelectorAll('[data-hole]').forEach(x=>x.oninput=()=>f.values[+x.dataset.hole]=x.value);$('#checkFill').onclick=()=>{f.checked=true;drawFill()};$('#reveal').onclick=()=>{f.reveal=true;drawFill()}}
+</script></body></html>
