@@ -3,6 +3,7 @@
 Interaktivni kviz za učenje i ponavljanje islamske vjeronauke.
 
 - 6. razred: Moje potrebe i težnje, stranice 6–9.
+- 6. razred: Ljut sam, jako sam ljut, stranice 30–32.
 - 7. razred: Prirodno je težiti uspjehu, stranice 6–8.
 - Odvojeni udžbenici i lekcije, sažeci, 40 pitanja po razredu, ajeti i hadisi, dopunjavanje riječi.
 
