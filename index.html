@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="bs"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Moja vjeronauka • 6. i 7. razred</title><style>
 :root{--ink:#193b35;--green:#17664e;--paper:#f5f3eb;--line:#dce3da;--muted:#63736d}*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.65 system-ui, sans-serif}button,input,select{font:inherit}button,select{cursor:pointer}button{border:1px solid var(--line);border-radius:12px;background:white;color:var(--ink);padding:11px 20px;font-weight:650}button:hover{border-color:var(--green);background:#eef5ed}button:disabled{cursor:default;opacity:.6}button.primary{background:var(--green);color:white;border-color:var(--green)}input,select{padding:12px;border:1px solid #b7c7bd;border-radius:10px;background:white;color:var(--ink);max-width:100%}label{display:block;font-size:14px;font-weight:650}input:focus-visible,button:focus-visible,select:focus-visible,a:focus-visible{outline:3px solid #c79738;outline-offset:3px}h1,h2,h3,p{margin-top:0}h1{font:700 clamp(30px,4vw,47px)/1.15 Georgia,serif;margin-bottom:18px}h2{font:700 27px/1.3 Georgia,serif}h3{font-size:18px}small,.muted{color:var(--muted)}.shell{max-width:1120px;margin:auto;padding:28px}.top{display:flex;justify-content:space-between;align-items:center;gap:15px;margin-bottom:30px}.brand{font-weight:800;letter-spacing:-.5px}.brand b{display:inline-grid;place-items:center;background:var(--green);color:white;border-radius:12px;width:42px;height:42px;margin-right:12px}.eyebrow{font-size:12px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:var(--green);margin-bottom:13px}.hero{display:grid;grid-template-columns:1fr 280px;gap:35px;align-items:center;margin:36px 0}.hero p{max-width:660px}.stamp{border:1px solid #cdd9cb;border-radius:24px;background:#e7eddf;padding:25px;text-align:center}.stamp strong{display:block;font:700 58px Georgia,serif}.selectors{display:grid;grid-template-columns:1fr 2fr;gap:20px;background:white;border:1px solid var(--line);padding:20px;border-radius:18px}.selectors select{display:block;width:100%;margin-top:6px}nav{display:flex;gap:8px;flex-wrap:wrap;margin:25px 0}nav button[aria-pressed=true]{background:var(--ink);color:white}.card{background:white;border:1px solid var(--line);border-radius:20px;padding:28px;margin-bottom:18px}.grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}.grid .card{margin:0}.tag{display:inline-block;background:#eaf2e6;border-radius:7px;padding:3px 10px;font-size:12px;font-weight:700}.row{display:flex;gap:12px;align-items:center;flex-wrap:wrap;justify-content:space-between}.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px}.options{display:grid;gap:12px;margin:20px 0}.option{text-align:left;display:flex;gap:14px;align-items:center;font-weight:500}.option span{background:#eff2ec;border-radius:8px;padding:3px 10px;font-weight:700}.option.selected{border:2px solid var(--green);background:#e9f3ec}.correct{background:#e7f3e9!important;border-color:#438956!important}.wrong{background:#fff0ed!important;border-color:#b45a48!important}.feedback{border-left:4px solid var(--green);padding:12px 16px;background:#eff5eb;border-radius:6px;margin-top:16px}.error{color:#9b382b}.progress{height:7px;background:#e5ebe3;border-radius:10px;overflow:hidden;margin:18px 0 25px}.progress i{display:block;background:#b59447;height:100%}blockquote{margin:20px 0;font:22px/1.8 Georgia,serif}.fill{line-height:3.4;margin:22px 0}.fill input{width:130px;margin:3px;padding:5px 9px}.login{max-width:460px;margin:7vh auto}.login input{width:100%;margin:6px 0 16px}.login button{width:100%}footer{font-size:12px;color:var(--muted);padding:30px 0}.score{font:700 60px Georgia,serif;color:var(--green)}[hidden]{display:none!important}@media(max-width:700px){.shell{padding:18px}.hero{grid-template-columns:1fr;gap:10px;margin:24px 0}.stamp{display:none}.selectors,.grid{grid-template-columns:1fr}.card{padding:20px}nav button{flex:1;padding:10px 12px}h1{font-size:34px}.top{margin-bottom:16px}.fill input{width:110px}}
+.fill-text{font-size:19px;line-height:2.7;margin:20px 0;overflow-wrap:anywhere}.fill-slot{display:inline-block;padding:5px 10px;margin:3px 2px;border:2px solid #bacbbd;line-height:1.5;font-weight:600;max-width:100%;overflow-wrap:anywhere}.fill-slot small{font-size:11px;opacity:.75;margin-right:4px}.fill-slot.active{outline:3px solid #b78b29;outline-offset:2px}.fill-slot.wrong{color:#9b2825!important;border-color:#bc4b41!important;background:#fff0ed!important}.fill-slot.correct{color:#195238}.fill-bank{display:flex;flex-wrap:wrap;gap:9px;padding:16px;border:1px dashed #b4c7b9;border-radius:14px;background:#f6f8f3}.fill-bank button{padding:9px 13px;overflow-wrap:anywhere;max-width:100%}#quoteSelect{display:block;width:100%;margin-top:6px}#fillSelected{font-size:14px}.actions button{max-width:100%}@media(max-width:700px){.fill-text{font-size:17px}.fill-slot{padding:5px 8px}.fill-bank{padding:12px;gap:8px}.actions{gap:8px}.actions button{padding:10px 12px}}
 </style></head><body><div class="shell"><header class="top"><div class="brand"><b>م</b>Moja vjeronauka</div><button id="logout" hidden>Odjava</button></header>
 <section id="login" class="card login"><div class="eyebrow">Dobro došli</div><h1>Znanje raste<br>svakim korakom.</h1><p class="muted">Vježbaj, razmisli i provjeri naučeno.</p><form id="loginForm"><label for="username">Korisničko ime</label><input id="username" autocomplete="username" required><label for="password">Lozinka</label><input id="password" type="password" autocomplete="current-password" required><button class="primary">Prijavi se</button><p id="loginError" class="error" role="alert"></p></form><small>Lokalna testna verzija • 6. i 7. razred</small></section>
 <main id="app" hidden><section class="hero"><div><div class="eyebrow">Uči svojim tempom</div><h1 id="lessonTitle"></h1><p class="muted" id="intro"></p></div><aside class="stamp"><span>Znanje za svaki dan</span><strong id="gradeBadge">6.</strong><span>razred · islamska vjeronauka</span></aside></section>
@@ -1379,6 +1380,579 @@ const DATA={
       ],
       "id": "uspjeh",
       "quoteNote": "Navodi i prijevodi prema udžbeniku, stranice 6–8."
+    },
+    {
+      "id": "pomozimo-potrebne",
+      "title": "Pomozimo potrebne",
+      "pages": "43–45",
+      "questions": [
+        {
+          "q": "U čemu ajet El-Ma’ide, 2 traži da jedni drugima pomažemo?",
+          "options": [
+            "U dobročinstvu i čestitosti",
+            "U grijehu i neprijateljstvu",
+            "Samo u stjecanju lične koristi",
+            "Samo u poslovima za koje dobijamo naknadu"
+          ],
+          "source": "str. 43",
+          "focus": false,
+          "ex": "Ajet poziva na pomaganje u dobru i zabranjuje sudjelovanje u grijehu i neprijateljstvu."
+        },
+        {
+          "q": "Koji primjer najbolje odgovara uvodnoj poruci o različitim načinima pomaganja?",
+          "options": [
+            "Uz materijalnu pomoć pružiti savjet, uputu, lijepu riječ ili osmijeh",
+            "Pomagati samo kada možemo dati novac",
+            "Pomagati samo osobama koje će uzvratiti",
+            "Smatrati da savjet nikada nije pomoć"
+          ],
+          "source": "str. 43",
+          "focus": false,
+          "ex": "Uvod naglašava različite potrebe i materijalne i nematerijalne oblike pomoći."
+        },
+        {
+          "q": "Zašto je siromašni čovjek iz priče „Halal nafaka” krenuo do Kabe?",
+          "options": [
+            "Da obavi tavaf i zamoli Allaha za nafaku",
+            "Da kupi kesu dinara",
+            "Da od hadžija naplati hranu",
+            "Da se pohvali svojom imovinom"
+          ],
+          "source": "str. 43",
+          "focus": false,
+          "ex": "U kući nije našao hranu; odlazi da sedam puta tavafi Kabu i zamoli Allaha za opskrbu."
+        },
+        {
+          "q": "Kako je supruga reagovala kada je donio pronađenu kesu novca?",
+          "options": [
+            "Tražila je da je vrati jer pripada onome ko ju je izgubio",
+            "Savjetovala je da odmah potroši sav novac",
+            "Tražila je da sakrije gdje ju je našao",
+            "Rekla je da siromaštvo dopušta uzimanje tuđeg"
+          ],
+          "source": "str. 43",
+          "focus": false,
+          "ex": "Supruga ga podsjeća da pronađeni novac nije njihov i da ga treba vratiti vlasniku."
+        },
+        {
+          "q": "Kako je čovjek prije vraćanja kese provjerio osobu koja ju je tražila?",
+          "options": [
+            "Pitao je šta se nalazilo u kesi",
+            "Tražio je da mu prvo plati nagradu",
+            "Pitao je samo iz kojeg grada dolazi",
+            "Zaključio je da je dovoljan izgled odjeće"
+          ],
+          "source": "str. 43",
+          "focus": false,
+          "ex": "Hadžija je opisao kesu sa stotinu dinara, nakon čega mu je čovjek predao novac."
+        },
+        {
+          "q": "Zašto je darovalac iz Egipta odabrao takav način davanja sadake?",
+          "options": [
+            "Želio je da sadaka usreći poštenog čovjeka koji vrati povjereno",
+            "Želio je da nagradi onoga ko novac sakrije",
+            "Tražio je naknadu veću od svog dara",
+            "Želio je spriječiti svako pomaganje siromašnima"
+          ],
+          "source": "str. 44",
+          "focus": false,
+          "ex": "Hadžija objašnjava da je vraćanje novca pokazalo poštenje siromašnog čovjeka."
+        },
+        {
+          "q": "Na šta supruga podsjeća čovjeka nakon što je dobio obje kese?",
+          "options": [
+            "Da kupi hranu i udijeli sadaku jer ima siromašnijih od njih",
+            "Da prestane misliti na tuđe potrebe",
+            "Da zadrži novac koji pripada drugima",
+            "Da javno ponižava one koji traže pomoć"
+          ],
+          "source": "str. 44",
+          "focus": false,
+          "ex": "I nakon vlastite neimaštine porodica treba misliti na one kojima je pomoć potrebna."
+        },
+        {
+          "q": "Koji zaključak najbolje povezuje postupke porodice iz priče?",
+          "options": [
+            "Poštenje i zahvalnost idu zajedno s brigom za druge",
+            "Pronađeni novac pripada svakome ko ga prvi uzme",
+            "Pomoć se daje samo radi pohvale",
+            "Siromašan čovjek nikada ne može pomoći drugome"
+          ],
+          "source": "str. 44",
+          "focus": false,
+          "ex": "Čovjek vraća tuđe, zahvaljuje Allahu i prihvata da dio primljenog dobra podijeli."
+        },
+        {
+          "q": "Šta je sadekatu-l-fitr prema rubrici „Pamti i primjenjuj”?",
+          "options": [
+            "Obavezni individualni doprinos u novcu ili hrani tokom ramazana",
+            "Isključivo dobrovoljan poklon nakon svakog putovanja",
+            "Novčana kazna za svaki propušteni školski zadatak",
+            "Samo osmijeh koji upućujemo prijatelju"
+          ],
+          "source": "str. 45",
+          "focus": true,
+          "ex": "Definicija izdvaja obaveznost, pojedinca, novac ili hranu i mjesec ramazan.",
+          "vocabulary": [
+            "sadekatu-l-fitr"
+          ]
+        },
+        {
+          "q": "Ko prema lekciji treba dati sadekatu-l-fitr?",
+          "options": [
+            "Svako ko ima materijalne mogućnosti, bez obzira na starosnu dob",
+            "Samo osobe starije od šezdeset godina",
+            "Samo muškarci koji rade u trgovini",
+            "Samo osobe koje su obavile hadž"
+          ],
+          "source": "str. 44",
+          "focus": true,
+          "ex": "Udžbenik obavezu povezuje s materijalnim mogućnostima, a ne s godinama."
+        },
+        {
+          "q": "Za koga roditelji trebaju izdvojiti sadekatu-l-fitr prema lekciji?",
+          "options": [
+            "Za sebe i svoju djecu",
+            "Samo za sebe, nikada za djecu",
+            "Samo za najstarije dijete",
+            "Samo za djecu koja samostalno zarađuju"
+          ],
+          "source": "str. 44",
+          "focus": true,
+          "ex": "Roditelji su obavezni to učiniti za sebe i svoju djecu, uz navedeni uvjet mogućnosti."
+        },
+        {
+          "q": "U kojem se mjesecu izdvaja sadekatu-l-fitr prema lekciji?",
+          "options": [
+            "U ramazanu",
+            "Isključivo u muharremu",
+            "Isključivo u saferu",
+            "Samo u mjesecu hadža"
+          ],
+          "source": "str. 44",
+          "focus": true,
+          "ex": "I glavni tekst i rubrika „Pamti i primjenjuj” navode mjesec ramazan."
+        },
+        {
+          "q": "U kojim oblicima može biti sadekatu-l-fitr prema definiciji?",
+          "options": [
+            "U novcu ili hrani",
+            "Isključivo u odjeći",
+            "Samo u lijepim riječima",
+            "Samo u uslugama prijevoza"
+          ],
+          "source": "str. 44",
+          "focus": true,
+          "ex": "Definicija navodi novac i hranu; druge vrste dobročinstva obrađene su u dijelu o sadaki."
+        },
+        {
+          "q": "S čim je povezan primljeni post u Poslanikovoj poruci prepričanoj u lekciji?",
+          "options": [
+            "S izdvajanjem sadekatu-l-fitra ako je osoba u mogućnosti",
+            "S pronalaženjem kese novca",
+            "S javnim hvaljenjem svim dobrim djelima",
+            "S davanjem samo onima koji će uzvratiti"
+          ],
+          "source": "str. 44",
+          "focus": true,
+          "ex": "Udžbenik prenosi poruku o izdvajanju sadekatu-l-fitra uz izričit uvjet mogućnosti."
+        },
+        {
+          "q": "Kako je u udžbeniku opisan najniži iznos sadekatu-l-fitra?",
+          "options": [
+            "Obično u visini prosječna dva obroka ishrane za jednu osobu",
+            "Kao cijena dvaju godišnjih putovanja",
+            "Kao ukupna imovina porodice",
+            "Kao iznos koji je jednak za sve godine bez nove odluke"
+          ],
+          "source": "str. 44",
+          "focus": true,
+          "ex": "Lekcija koristi mjeru prosječna dva obroka za jednu osobu, a ne navodi današnji novčani iznos."
+        },
+        {
+          "q": "Šta lekcija kaže o najvećem iznosu sadekatu-l-fitra?",
+          "options": [
+            "Nije određen i lijepo je dati što veći iznos",
+            "Uvijek je tačno dvostruki najmanji iznos",
+            "Ne smije preći cijenu jednog obroka",
+            "Davanje većeg iznosa poništava doprinos"
+          ],
+          "source": "str. 44",
+          "focus": true,
+          "ex": "Udžbenik razlikuje uobičajeni najniži iznos i neodređenu gornju granicu."
+        },
+        {
+          "q": "Koja je praksa u BiH u pogledu sadekatu-l-fitra opisana u udžbeniku?",
+          "options": [
+            "Davanje u novcu u Bejtu-l-mal",
+            "Davanje isključivo odjeće u privatne trgovine",
+            "Obavezno odnošenje novca u Egipat",
+            "Davanje samo osobama koje poznaju darovaoca"
+          ],
+          "source": "str. 44",
+          "focus": true,
+          "ex": "Pitanje provjerava praksu opisanu u lekciji, koja izdvaja Bejtu-l-mal."
+        },
+        {
+          "q": "Šta je Bejtu-l-mal prema objašnjenju u lekciji?",
+          "options": [
+            "Poseban fond Islamske zajednice",
+            "Naziv jedne vrste tavafa",
+            "Ime čovjeka iz priče",
+            "Naziv za javno hvaljenje sadakom"
+          ],
+          "source": "str. 44",
+          "focus": true,
+          "ex": "Udžbenik ga opisuje kao poseban fond Islamske zajednice u koji se daje sadekatu-l-fitr.",
+          "vocabulary": [
+            "Bejtu-l-mal"
+          ]
+        },
+        {
+          "q": "Za koje namjene lekcija navodi sredstva Bejtu-l-mala?",
+          "options": [
+            "Vjerske i odgojno-obrazovne djelatnosti Islamske zajednice te pomoć siromašnim muslimanima i muslimankama",
+            "Samo nagrade osobama koje daju najviše novca",
+            "Isključivo privatna putovanja darovalaca",
+            "Samo kupovinu hrane za jednu porodicu iz priče"
+          ],
+          "source": "str. 44",
+          "focus": true,
+          "ex": "U tekstu su obuhvaćene i djelatnosti zajednice i pomoć siromašnima."
+        },
+        {
+          "q": "Ko prema lekciji svake godine posebnom odlukom određuje visinu sadekatu-l-fitra u BiH?",
+          "options": [
+            "Rijaset Islamske zajednice u BiH",
+            "Svaki razred zasebno",
+            "Isključivo osoba koja pronađe izgubljeni novac",
+            "Autor priče o halal nafaki"
+          ],
+          "source": "str. 44",
+          "focus": true,
+          "ex": "Lekcija izričito navodi Rijaset Islamske zajednice u BiH i godišnju odluku."
+        },
+        {
+          "q": "Šta je sadaka prema lekciji?",
+          "options": [
+            "Dobročinstvo koje se u ime Allaha čini drugoj osobi",
+            "Samo obavezni ramazanski doprinos",
+            "Svaka razmjena robe radi zarade",
+            "Samo javno darivanje uz traženje pohvale"
+          ],
+          "source": "str. 44",
+          "focus": true,
+          "ex": "Definicija obuhvata dobročinstvo drugome i namjeru činjenja u ime Allaha.",
+          "vocabulary": [
+            "sadaka"
+          ]
+        },
+        {
+          "q": "Koji niz sadrži materijalne oblike sadake navedene u lekciji?",
+          "options": [
+            "Novac, hrana, odjeća i obuća",
+            "Samo pozdrav, osmijeh i savjet",
+            "Samo tumačenje pojma sened",
+            "Samo izgovaranje naziva Bejtu-l-mal"
+          ],
+          "source": "str. 44",
+          "focus": true,
+          "ex": "Materijalna sadaka može obuhvatiti i drugo što je čovjeku neophodno za život."
+        },
+        {
+          "q": "Koji postupak pokazuje da sadaka nije samo materijalna pomoć?",
+          "options": [
+            "Uputiti lijepu riječ, pozdrav ili koristan savjet",
+            "Dati novac uz stalno prigovaranje",
+            "Pomoći samo ako se usluga naplati",
+            "Odbiti svaki oblik pomoći bez novca"
+          ],
+          "source": "str. 44",
+          "focus": true,
+          "ex": "Tekst izričito uključuje pozdrav, lijepu riječ i savjet u dobročinstvo."
+        },
+        {
+          "q": "Kako podsticanje i odvraćanje mogu biti sadaka?",
+          "options": [
+            "Podsticanjem na lijepa i korisna djela te odvraćanjem od ružnih i beskorisnih postupaka",
+            "Podsticanjem na ponižavanje slabijih",
+            "Odvraćanjem od svake pomoći nepoznatima",
+            "Podsticanjem na grijeh radi lične koristi"
+          ],
+          "source": "str. 44",
+          "focus": true,
+          "ex": "Sadaka uključuje i dobronamjerno usmjeravanje čovjekovog ponašanja."
+        },
+        {
+          "q": "Ko prema uvodu u navod govori „O čovječe, dijeli drugima, Ja ću tebi udijeliti!”?",
+          "options": [
+            "Allah, a Njegove riječi prenosi Muhammed, a.s.",
+            "Supruga siromašnog čovjeka",
+            "Hadžija koji traži kesu",
+            "Darovalac iz Egipta koji piše pismo"
+          ],
+          "source": "str. 44",
+          "focus": true,
+          "ex": "Udžbenik izričito kaže da Muhammed, a.s., prenosi Allahove riječi; navod je označen kao hadis-kudsi u vježbi."
+        },
+        {
+          "q": "Kojim redoslijedom lekcija upućuje na pomaganje sadakom?",
+          "options": [
+            "Svojim najbližima kojima treba pomoć, zatim siromasima i nevoljnicima",
+            "Samo imućnim osobama koje uzvraćaju dar",
+            "Najprije onima koji nas javno hvale",
+            "Nikada rodbini, nego isključivo nepoznatima"
+          ],
+          "source": "str. 44",
+          "focus": true,
+          "ex": "Potreba za pomoći važna je i pri pomaganju najbližima."
+        },
+        {
+          "q": "Kakav odnos javnog i tajnog davanja sadake navodi lekcija?",
+          "options": [
+            "Može se dati javno, ali je kod Allaha vrednija tajno udijeljena sadaka",
+            "Javno davanje je jedini dopušteni oblik",
+            "Tajno davanje nema nikakvu vrijednost",
+            "Sadaka vrijedi samo ako je darovalac pohvaljen"
+          ],
+          "source": "str. 44",
+          "focus": true,
+          "ex": "Lekcija dopušta javno davanje, ali naglašava vrijednost tajnog."
+        },
+        {
+          "q": "Koja je korist tajnog davanja istaknuta u nastavku teksta?",
+          "options": [
+            "Postizanje pune nagrade kod Stvoritelja i izbjegavanje hvalisanja",
+            "Sigurna mogućnost da se primaocu kasnije prigovara",
+            "Izbjegavanje svake brige o potrebama drugih",
+            "Obaveza da se dobročinstvo odmah objavi svima"
+          ],
+          "source": "str. 45",
+          "focus": true,
+          "ex": "Tajnost pomaže očuvanju iskrenosti i izbjegavanju hvalisanja."
+        },
+        {
+          "q": "Šta se prema lekciji događa kada dobročinitelj prigovara za sadaku ili se njome hvali?",
+          "options": [
+            "Sadaka gubi vrijednost i umanjuje se nagrada na ahiretu",
+            "Vrijednost sadake se automatski udvostruči",
+            "Primalac postaje vlasništvo darovaoca",
+            "To ne utječe na vrijednost dobročinstva"
+          ],
+          "source": "str. 45",
+          "focus": true,
+          "ex": "Važan je način davanja i odnos prema osobi kojoj se pomaže."
+        },
+        {
+          "q": "Šta Poslanikov savjet izdvaja kao najbolju sadaku?",
+          "options": [
+            "Gladnog nahraniti",
+            "Darovati samo onoga ko već ima dovoljno",
+            "Hvaliti se iznosom poklona",
+            "Usloviti hranu javnom zahvalom"
+          ],
+          "source": "str. 45",
+          "focus": true,
+          "ex": "Navod glasi: „Najbolja je sadaka gladnog nahraniti.”"
+        },
+        {
+          "q": "Koju poruku donosi navod „Sadaka povećava imetak, pa dijelite sadaku…”?",
+          "options": [
+            "Podstiče na dijeljenje i traženje Allahove milosti",
+            "Traži da se pomoć uvijek naplati",
+            "Podstiče na prisvajanje pronađenog novca",
+            "Govori da je vrijedna samo pomoć u odjeći"
+          ],
+          "source": "str. 45",
+          "focus": true,
+          "ex": "Završetak navoda je „da bi vam se Allah smilovao”."
+        },
+        {
+          "q": "Šta znači hadis o sklanjanju s puta onoga što ljudima smeta?",
+          "options": [
+            "I uklanjanje smetnje s puta ubraja se u sadaku",
+            "Sadaka je moguća samo predajom novca",
+            "Smetnju treba ostaviti dok je neko ne plati",
+            "Pomaganje na putu nije povezano s dobročinstvom"
+          ],
+          "source": "str. 45",
+          "focus": true,
+          "ex": "Navod pokazuje praktičnu pomoć koja ne zahtijeva novac."
+        },
+        {
+          "q": "Koja dva nenovčana postupka zajedno navodi završni Poslanikov savjet?",
+          "options": [
+            "Lijepu riječ i pokazivanje puta",
+            "Prigovor i hvalisanje",
+            "Zadržavanje tuđeg novca i šutnju",
+            "Traženje pohvale i naplatu savjeta"
+          ],
+          "source": "str. 45",
+          "focus": true,
+          "ex": "U tekstu stoji da su i lijepa riječ i pokazivanje puta sadaka."
+        },
+        {
+          "q": "Kakve stvari ajet El-Bekare, 267 poziva da udjeljujemo?",
+          "options": [
+            "Lijepe stvari koje steknemo i ono što Allah daje iz zemlje",
+            "Samo ono što ni sami ne bismo prihvatili",
+            "Isključivo stvari bez ikakve upotrebne vrijednosti",
+            "Samo predmete koje nikad ne koristimo zato što su pokvareni"
+          ],
+          "source": "str. 45",
+          "focus": true,
+          "ex": "Ajet povezuje davanje s kvalitetnim stečenim dobrima i darovima koje Allah daje iz zemlje."
+        },
+        {
+          "q": "Na šta upozorava dio ajeta „ne izdvajajte ono što ne vrijedi da biste to udijelili”?",
+          "options": [
+            "Ne nuditi drugima loše stvari koje ni sami ne bismo primili osim zatvorenih očiju",
+            "Davati samo najveći mogući novčani iznos",
+            "Odbiti svaku pomoć u hrani",
+            "Davati isključivo predmete bez vrijednosti"
+          ],
+          "source": "str. 45",
+          "focus": true,
+          "ex": "Ajet traži da dobro koje dajemo drugima ne bude ono što sami ne bismo željeli primiti."
+        },
+        {
+          "q": "Kako završetak ajeta El-Bekare, 267 opisuje Allaha?",
+          "options": [
+            "Nije ni o kome ovisan i hvale je dostojan",
+            "Ovisan je o imovini darovalaca",
+            "Potreban Mu je svaki ljudski poklon",
+            "Njegova milost zavisi od javnih pohvala ljudi"
+          ],
+          "source": "str. 45",
+          "focus": true,
+          "ex": "Ajet podsjeća na Allahovu neovisnost i dostojnost hvale."
+        },
+        {
+          "q": "Želiš pokloniti hranu i odjeću. Koji izbor najbolje primjenjuje poruku ajeta iz lekcije?",
+          "options": [
+            "Ispravna hrana i očuvana odjeća koju bi i sam prihvatio",
+            "Pokvarena hrana i neupotrebljiva odjeća",
+            "Samo stvari koje mogu naštetiti primaocu",
+            "Poklon uz uslov da te primalac javno pohvali"
+          ],
+          "source": "str. 45",
+          "focus": true,
+          "ex": "Primjena ajeta znači birati korisne i primjerene stvari za osobe kojima pomažemo."
+        },
+        {
+          "q": "Učenik nema novca, a želi pomoći. Šta je u skladu s poukom „Kutka za razgovor”?",
+          "options": [
+            "Može pomoći lijepom riječju, savjetom ili pokazivanjem puta",
+            "Ne može učiniti nikakvu sadaku",
+            "Mora uzeti tuđi novac da bi pomogao",
+            "Treba odustati dok ne postane bogat"
+          ],
+          "source": "str. 45",
+          "focus": true,
+          "ex": "Razgovor pita kakvu sadaku može dati siromah; tekst nudi više nenovčanih primjera."
+        },
+        {
+          "q": "Koja tvrdnja pravilno razlikuje sadekatu-l-fitr i sadaku?",
+          "options": [
+            "Sadekatu-l-fitr je obavezni ramazanski doprinos uz mogućnost, a sadaka obuhvata razne oblike dobročinstva u ime Allaha",
+            "Oba pojma označavaju samo osmijeh",
+            "Sadaka se uvijek mora dati u novcu u ramazanu",
+            "Sadekatu-l-fitr označava samo pokazivanje puta"
+          ],
+          "source": "str. 45",
+          "focus": true,
+          "ex": "Razlika proizlazi iz definicija izdvojenih u rubrici „Pamti i primjenjuj”."
+        },
+        {
+          "q": "Koji plan odgovara zadacima iz rubrike „Odaberi zadaću”?",
+          "options": [
+            "Napisati pjesmu ili sastav o sadaki, razgovarati s roditeljima o sadekatu-l-fitru i prikazati šta dajemo drugima",
+            "Napisati samo naziv priče i preskočiti razgovor o pomaganju",
+            "Sastaviti popis samo onoga što želimo dobiti",
+            "Pamtiti samo iznos novca iz priče bez primjene pouke"
+          ],
+          "source": "str. 45",
+          "focus": true,
+          "ex": "Zadaća povezuje pisanje, porodični razgovor i prepoznavanje vlastitih oblika davanja."
+        }
+      ],
+      "summary": [
+        [
+          "Pomaganje i halal nafaka · str. 43–44",
+          "El-Ma’ide, 2 poziva na pomaganje u dobročinstvu i čestitosti, a ne u grijehu i neprijateljstvu. Pomoć nije samo novčana. U priči siromašni čovjek vraća pronađenu kesu sa stotinu dinara. Darovalac je želio pomoći poštenom čovjeku, pa porodica dobija obje kese. Supruga podsjeća da i oni pomognu siromašnijima. Pouke su poštenje, zahvalnost Allahu i briga za druge."
+        ],
+        [
+          "Sadekatu-l-fitr: značenje i obaveza · str. 44–45",
+          "Obavezni individualni doprinos u novcu ili hrani koji se izdvaja tokom ramazana. Prema lekciji daje ga svako ko ima materijalne mogućnosti, bez obzira na starost; roditelji za sebe i djecu. Tekst prenosi Poslanikovu poruku koja primljeni post povezuje s izdvajanjem sadekatu-l-fitra uz uvjet mogućnosti."
+        ],
+        [
+          "Iznos i praksa u BiH prema udžbeniku · str. 44",
+          "Najniži iznos obično je u visini prosječna dva obroka za jednu osobu; najveći nije određen. Lijepo je dati više. U udžbeniku je opisana praksa davanja u novcu u Bejtu-l-mal, poseban fond Islamske zajednice. Iz njega se finansiraju vjerske i odgojno-obrazovne djelatnosti i pomažu siromašni muslimani i muslimanke. Rijaset Islamske zajednice u BiH godišnjom odlukom određuje visinu. Ovdje se uči gradivo, ne ovogodišnji novčani iznos."
+        ],
+        [
+          "Sadaka ima mnogo oblika · str. 44",
+          "Sadaka je dobročinstvo u ime Allaha drugoj osobi: novac, hrana, odjeća, obuća i druge životne potrepštine; ali i pozdrav, lijepa riječ, savjet, podsticanje na korisno i odvraćanje od ružnog. Najprije se pomaže najbližima kojima treba pomoć, zatim siromasima i nevoljnicima. Hadis-kudsi: „O čovječe, dijeli drugima, Ja ću tebi udijeliti!”"
+        ],
+        [
+          "Čuvaj vrijednost dobročinstva · str. 44–45",
+          "Sadaka se može dati javno, ali lekcija ističe veću vrijednost tajnog davanja, punu nagradu kod Stvoritelja i izbjegavanje hvalisanja. Prigovaranje i hvalisanje umanjuju vrijednost sadake i nagradu na ahiretu."
+        ],
+        [
+          "Poruke hadisa · str. 45",
+          "Nahraniti gladnog istaknuto je kao najbolja sadaka. Dijeljenje sadake povezano je s povećanjem imetka i Allahovom milošću. Skloniti smetnju s puta, uputiti lijepu riječ i pokazati put također je sadaka. I osoba bez novca može pomoći."
+        ],
+        [
+          "Daj ono što je dobro · str. 45",
+          "El-Bekare, 267 poziva na udjeljivanje lijepih stečenih stvari i onoga što Allah daje iz zemlje. Ne izdvajamo bezvrijedno što ni sami ne bismo primili osim zatvorenih očiju. Allah nije ni o kome ovisan i hvale je dostojan. Biraj korisne i primjerene stvari te čuvaj dostojanstvo primaoca."
+        ],
+        [
+          "Primijeni i razgovaraj · str. 45",
+          "Objasni razliku sadake i sadekatu-l-fitra. Navedi kako pomažeš kada nemaš novca. Napiši pjesmu ili sastav o sadaki, razgovaraj s roditeljima o davanju sadekatu-l-fitra i listom ili grozdom prikaži šta daješ ljudima oko sebe."
+        ]
+      ],
+      "quotes": [
+        [
+          "Pomaganje u dobru · ajet",
+          "Jedni drugima pomažite u dobročinstvu i čestitosti, a ne sudjelujte u grijehu i neprijateljstvu.",
+          "El-Ma’ide, 2 · odlomak, str. 43"
+        ],
+        [
+          "Post i sadekatu-l-fitr · hadiska poruka",
+          "Allahov Poslanik, a.s., je rekao da će post muslimana i muslimanke biti primljen tek onda kada izdvoje sadekatu-l-fitr – ako su u mogućnosti.",
+          "str. 44 · prepričana poruka u udžbeniku, ne doslovni citat hadisa"
+        ],
+        [
+          "Dijeli drugima · hadis-kudsi",
+          "O čovječe, dijeli drugima, Ja ću tebi udijeliti!",
+          "str. 44 · Muhammed, a.s., prenosi Allahove riječi"
+        ],
+        [
+          "Najbolja sadaka · hadis",
+          "Najbolja je sadaka gladnog nahraniti.",
+          "str. 45"
+        ],
+        [
+          "Sadaka i Allahova milost · hadis",
+          "Sadaka povećava imetak, pa dijelite sadaku da bi vam se Allah smilovao.",
+          "str. 45"
+        ],
+        [
+          "Ukloni smetnju s puta · hadis",
+          "Sklanjaj sa puta ono što svijetu smeta, to će ti se ubrojiti u sadaku.",
+          "str. 45"
+        ],
+        [
+          "Lijepa riječ i pokazivanje puta · hadis",
+          "I lijepa riječ je sadaka. I nekome put pokazati je sadaka.",
+          "str. 45"
+        ],
+        [
+          "Udijelite lijepe stvari · ajet",
+          "O vjernici, udjeljujte od lijepih stvari koje stječete i od onoga što vam Mi iz zemlje dajemo, ne izdvajajte ono što ne vrijedi da biste to udijelili – kada ni vi sami ne biste to primili, osim zatvorenih očiju. I znajte da Allah nije ni o kome ovisan i da je hvale dostojan.",
+          "El-Bekare, 267 · str. 45"
+        ]
+      ],
+      "quoteNote": "Dva ajeta, hadis-kudsi, četiri Poslanikova savjeta i prepričana poruka o sadekatu-l-fitru iz udžbenika. Prepričana poruka jasno je označena. U vježbi se crtica ne tretira kao riječ. Lekcija nema poseban pojmovnik ni rubriku „Saznajmo o drugima”; sadaka, sadekatu-l-fitr i Bejtu-l-mal izričito su ispitani."
     }
   ]
 };
@@ -1389,18 +1963,33 @@ let lessonIndex=0;
 const current=()=>DATA[grade][lessonIndex];
 const runKey=()=>grade+':'+current().id;
 $('#loginForm').onsubmit=e=>{e.preventDefault();if($('#username').value.trim()==='ucenik'&&$('#password').value==='Vjeronauka67!'){$('#login').hidden=true;$('#app').hidden=false;$('#logout').hidden=false;$('#password').value='';updateBook()}else $('#loginError').textContent='Korisničko ime ili lozinka nisu ispravni.'};
-$('#logout').onclick=()=>{$('#app').hidden=true;$('#logout').hidden=true;$('#login').hidden=false;$('#loginError').textContent='';runs={};fillState=null;$('#username').focus()};
+$('#logout').onclick=()=>{$('#app').hidden=true;$('#logout').hidden=true;$('#login').hidden=false;$('#loginError').textContent='';runs={};fillState=null;fillRuns={};$('#content').innerHTML='';$('#username').focus()};
 $('#book').onchange=e=>{grade=e.target.value;lessonIndex=0;fillState=null;updateBook()};$('#lesson').onchange=e=>{lessonIndex=+e.target.value;fillState=null;updateBook()};
 document.querySelectorAll('[data-tab]').forEach(b=>b.onclick=()=>{tab=b.dataset.tab;render()});
-function updateBook(){const d=current();$('#lessonTitle').textContent=d.title;$('#intro').textContent=`${grade}. razred · stranice ${d.pages}. Sažetak, 40 pitanja i vježbe za razumijevanje najvažnijih poruka lekcije.`;$('#gradeBadge').textContent=grade+'.';$('#lesson').innerHTML=DATA[grade].map((l,i)=>`<option value="${i}" ${i===lessonIndex?'selected':''}>${esc(l.title)} · str. ${l.pages}</option>`).join('');render()}
+function updateBook(){const d=current();$('#lessonTitle').textContent=d.title;$('#intro').textContent=`${grade}. razred · stranice ${d.pages}. Sažetak, ${d.questions.length} pitanja i vježbe za razumijevanje najvažnijih poruka lekcije.`;$('#gradeBadge').textContent=grade+'.';$('#lesson').innerHTML=DATA[grade].map((l,i)=>`<option value="${i}" ${i===lessonIndex?'selected':''}>${esc(l.title)} · str. ${l.pages}</option>`).join('');render()}
 function render(){document.querySelectorAll('[data-tab]').forEach(b=>b.setAttribute('aria-pressed',b.dataset.tab===tab));if(tab==='summary')summary();if(tab==='quiz')quiz();if(tab==='quotes')quotes();if(tab==='fill')fill()}
-function summary(){$('#content').innerHTML=`<div class="row" style="margin-bottom:18px"><h2>Razumij prije nego odgovoriš.</h2><span class="tag">Stranice ${current().pages}</span></div><div class="grid">${current().summary.map((s,i)=>`<article class="card"><div class="eyebrow">0${i+1} / ${i>=2?'Zapamti i primijeni':'Pročitaj i razumij'}</div><h3>${esc(s[0])}</h3><p>${esc(s[1])}</p></article>`).join('')}</div><div class="card" style="margin-top:18px"><strong>Spreman/spremna za provjeru?</strong><p class="muted">28 od 40 pitanja posvećeno je završnom dijelu, važnim poukama i njihovoj primjeni.</p><button class="primary" id="start">Započni kviz</button></div>`;$('#start').onclick=()=>{tab='quiz';render()}}
+function summary(){$('#content').innerHTML=`<div class="row" style="margin-bottom:18px"><h2>Razumij prije nego odgovoriš.</h2><span class="tag">Stranice ${current().pages}</span></div><div class="grid">${current().summary.map((s,i)=>`<article class="card"><div class="eyebrow">0${i+1} / ${i>=2?'Zapamti i primijeni':'Pročitaj i razumij'}</div><h3>${esc(s[0])}</h3><p>${esc(s[1])}</p></article>`).join('')}</div><div class="card" style="margin-top:18px"><strong>Spreman/spremna za provjeru?</strong><p class="muted">${current().questions.filter(q=>q.focus).length} od ${current().questions.length} pitanja posvećeno je završnom dijelu, važnim poukama i njihovoj primjeni.</p><button class="primary" id="start">Započni kviz</button></div>`;$('#start').onclick=()=>{tab='quiz';render()}}
 function newRun(){return {items:current().questions.map(q=>({...q,choices:shuffle(q.options)})),answers:Array(40).fill(null),checked:Array(40).fill(false),index:0,done:false}}
-function quiz(){if(!runs[runKey()])runs[runKey()]=newRun();const r=runs[runKey()];if(r.done){results();return}const i=r.index,q=r.items[i],checked=r.checked[i];$('#content').innerHTML=`<section class="card"><div class="row"><span class="eyebrow">Pitanje ${i+1} / 40</span><span class="tag">${q.focus?'Najvažnije pouke':'Razumijevanje teksta'}</span></div><div class="progress"><i style="width:${(i+1)/40*100}%"></i></div><h2>${esc(q.q)}</h2><div class="options">${q.choices.map((a,j)=>`<button class="option ${r.answers[i]===a?'selected':''} ${checked&&a===q.options[0]?'correct':''} ${checked&&r.answers[i]===a&&a!==q.options[0]?'wrong':''}" data-answer="${j}" ${checked?'disabled':''} aria-pressed="${r.answers[i]===a}"><span>${'ABC'[j]}</span>${esc(a)}</button>`).join('')}</div>${checked?`<div class="feedback" role="status"><strong>${r.answers[i]===q.options[0]?'Tačno!':'Pokušaj zapamtiti ovu poruku.'}</strong><br>Tačan odgovor: ${esc(q.options[0])}<br><small>Udžbenik, ${esc(q.source)}.</small></div>`:''}<div class="actions"><button id="prev" ${i===0?'disabled':''}>← Prethodno</button>${checked?`<button class="primary" id="next">${i===39?'Pogledaj rezultat':'Sljedeće →'}</button>`:`<button class="primary" id="check" ${r.answers[i]===null?'disabled':''}>Provjeri odgovor</button>`}</div><p class="muted" style="margin-top:18px;font-size:13px">Jedan tačan odgovor po pitanju. Rezultat računa prvi provjereni odgovor.</p></section>`;document.querySelectorAll('[data-answer]').forEach(b=>b.onclick=()=>{r.answers[i]=q.choices[+b.dataset.answer];quiz()});$('#prev').onclick=()=>{r.index--;quiz()};if($('#check'))$('#check').onclick=()=>{r.checked[i]=true;quiz()};if($('#next'))$('#next').onclick=()=>{if(i===39){r.done=true;results()}else{r.index++;quiz()}}}
+function quiz(){if(!runs[runKey()])runs[runKey()]=newRun();const r=runs[runKey()];if(r.done){results();return}const i=r.index,q=r.items[i],checked=r.checked[i];$('#content').innerHTML=`<section class="card"><div class="row"><span class="eyebrow">Pitanje ${i+1} / 40</span><span class="tag">${q.focus?'Najvažnije pouke':'Razumijevanje teksta'}</span></div><div class="progress"><i style="width:${(i+1)/40*100}%"></i></div><h2>${esc(q.q)}</h2><div class="options">${q.choices.map((a,j)=>`<button class="option ${r.answers[i]===a?'selected':''} ${checked&&a===q.options[0]?'correct':''} ${checked&&r.answers[i]===a&&a!==q.options[0]?'wrong':''}" data-answer="${j}" ${checked?'disabled':''} aria-pressed="${r.answers[i]===a}"><span>${'ABCD'[j]}</span>${esc(a)}</button>`).join('')}</div>${checked?`<div class="feedback" role="status"><strong>${r.answers[i]===q.options[0]?'Tačno!':'Pokušaj zapamtiti ovu poruku.'}</strong><br>Tačan odgovor: ${esc(q.options[0])}${q.ex?`<p>${esc(q.ex)}</p>`:''}<br><small>Udžbenik, ${esc(q.source)}.</small></div>`:''}<div class="actions"><button id="prev" ${i===0?'disabled':''}>← Prethodno</button>${checked?`<button class="primary" id="next">${i===39?'Pogledaj rezultat':'Sljedeće →'}</button>`:`<button class="primary" id="check" ${r.answers[i]===null?'disabled':''}>Provjeri odgovor</button>`}</div><p class="muted" style="margin-top:18px;font-size:13px">Jedan tačan odgovor po pitanju. Rezultat računa prvi provjereni odgovor.</p></section>`;document.querySelectorAll('[data-answer]').forEach(b=>b.onclick=()=>{r.answers[i]=q.choices[+b.dataset.answer];quiz()});$('#prev').onclick=()=>{r.index--;quiz()};if($('#check'))$('#check').onclick=()=>{r.checked[i]=true;quiz()};if($('#next'))$('#next').onclick=()=>{if(i===39){r.done=true;results()}else{r.index++;quiz()}}}
 function results(){const r=runs[runKey()],wrong=r.items.map((q,i)=>i).filter(i=>r.answers[i]!==r.items[i].options[0]),score=40-wrong.length;$('#content').innerHTML=`<section class="card"><div class="eyebrow">Tvoj rezultat</div><div class="score">${score} / 40</div><h2>${score===40?'Odlično, sve je tačno!':'Svaki pokušaj je prilika za učenje.'}</h2><p>Tačno ${Math.round(score/40*100)}% odgovora. ${wrong.length?'Pročitaj odgovore za pitanja koja treba ponoviti.':'Sve važne poruke uspješno su ponovljene.'}</p><button class="primary" id="retry">Ponovi kviz</button></section>${wrong.map(i=>`<article class="card"><h3>${i+1}. ${esc(r.items[i].q)}</h3><p>Tvoj odgovor: ${esc(r.answers[i]||'Bez odgovora')}</p><p><strong>Tačno: ${esc(r.items[i].options[0])}</strong></p><small>Udžbenik, ${esc(r.items[i].source)}.</small></article>`).join('')}`;$('#retry').onclick=()=>{runs[runKey()]=newRun();quiz()}}
 function quotes(){$('#content').innerHTML=`<h2>Ajeti, hadisi i dove</h2><p class="muted">${esc(current().quoteNote)}</p>${current().quotes.map(q=>`<article class="card"><span class="tag">${esc(q[0])}</span><blockquote>„${esc(q[1])}”</blockquote><small>Udžbenik, ${esc(q[2])}.</small></article>`).join('')}`}
 const norm=s=>s.toLocaleLowerCase('bs').normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/đ/g,'dj').replace(/[^a-z0-9]/g,'');
-function fill(){const quotes=current().quotes;if(!fillState)fillState={quote:0,count:2,tokens:[],holes:[],values:{},checked:false,reveal:false};const f=fillState;$('#content').innerHTML=`<section class="card"><div class="eyebrow">Vježbaj prisjećanje</div><h2>Dopuni izostavljene riječi</h2><p class="muted">Odaberi 2–15 praznina. Za kraće navode koristi se najviše onoliko praznina koliko tekst ima riječi. Pri provjeri se prihvataju velika i mala slova te unos bez kvačica.</p><div class="selectors"><label for="quoteSelect">Tekst<select id="quoteSelect">${quotes.map((q,i)=>`<option value="${i}" ${i===f.quote?'selected':''}>${esc(q[0])}</option>`).join('')}</select></label><label for="count">Broj izostavljenih riječi <output id="countLabel">${f.count}</output><input id="count" style="width:100%" type="range" min="2" max="15" value="${f.count}"></label></div><div class="actions"><button class="primary" id="makeFill">Nova vježba</button></div><div id="exercise"></div></section>`;$('#count').oninput=e=>{f.count=+e.target.value;$('#countLabel').textContent=f.count};$('#quoteSelect').onchange=e=>{f.quote=+e.target.value;makeFill()};$('#makeFill').onclick=makeFill;if(!f.tokens.length)makeFill();else drawFill()}
-function makeFill(){const f=fillState;f.tokens=current().quotes[f.quote][1].split(/\s+/);const eligible=f.tokens.map((w,i)=>norm(w)?i:null).filter(i=>i!==null);f.holes=shuffle(eligible).slice(0,Math.min(f.count,eligible.length)).sort((a,b)=>a-b);f.values={};f.checked=false;f.reveal=false;drawFill()}
-function drawFill(){const f=fillState,q=current().quotes[f.quote];$('#exercise').innerHTML=`<p class="muted">${esc(q[0])} · ${esc(q[2])} · ${f.holes.length} praznina</p><div class="fill">${f.tokens.map((w,i)=>f.holes.includes(i)?`<input aria-label="Izostavljena riječ ${f.holes.indexOf(i)+1}" data-hole="${i}" value="${esc(f.values[i]||'')}" autocomplete="off" spellcheck="false" ${f.checked?'disabled':''} class="${f.checked?(norm(f.values[i]||'')===norm(w)?'correct':'wrong'):''}">`:esc(w)).join(' ')}</div><div class="actions"><button class="primary" id="checkFill" ${f.checked?'disabled':''}>Provjeri dopunu</button><button id="reveal">Prikaži tekst</button></div><div id="fillFeedback" aria-live="polite">${f.checked?`<div class="feedback">Tačno ${f.holes.filter(i=>norm(f.values[i]||'')===norm(f.tokens[i])).length} od ${f.holes.length}.${f.holes.filter(i=>norm(f.values[i]||'')!==norm(f.tokens[i])).map(i=>`<div>Praznina ${f.holes.indexOf(i)+1}: <strong>${esc(f.tokens[i])}</strong></div>`).join('')}</div>`:''}${f.reveal?`<blockquote>${esc(q[1])}</blockquote>`:''}</div>`;document.querySelectorAll('[data-hole]').forEach(x=>x.oninput=()=>f.values[+x.dataset.hole]=x.value);$('#checkFill').onclick=()=>{f.checked=true;drawFill()};$('#reveal').onclick=()=>{f.reveal=true;drawFill()}}
+// Shared choice-based completion for both grades; texts retain their original case.
+const FILL_SPECS={"6": {"potrebe": [{"tokens": ["Djela", "se", "prosuđuju", "prema", "namjeri", "(nijjetu)", "i", "svako", "će", "imati", "ono", "što", "je", "naumio."], "holes": [2, 4, 5, 13], "extras": ["Djela", "imati"]}, {"tokens": ["Allahu", "moj,", "Tvojoj", "milosti", "se", "nadam", "i", "ne", "prepuštaj", "me", "samoj", "sebi", "ni", "koliko", "je", "treptaj", "oka.", "Popravi", "svako", "moje", "stanje,", "nema", "Boga", "osim", "tebe."], "holes": [0, 3, 8, 15, 17, 20], "extras": ["Tvojoj", "nadam"]}, {"tokens": ["Bože", "otvori", "mi", "vrata", "Svoje", "milosti", "i", "olakšaj", "mi", "vrata", "Tvoje", "opskrbe."], "holes": [5, 11], "extras": ["olakšaj", "otvori"]}], "ljutnja": [{"tokens": ["Kada", "se", "naljutiš,", "ako", "si", "stajao", "sjedi,", "ako", "si", "sjedio,", "onda", "se", "nasloni,", "a", "ako", "si", "naslonjen,", "onda", "lezi."], "holes": [2, 5, 9, 12, 16], "extras": ["sjedi,", "lezi."]}, {"tokens": ["Čovječe,", "sjeti", "se", "mene", "kada", "si", "ljut,", "Ja", "ću", "se", "tebe", "sjetiti", "u", "Svojoj", "ljutnji", "i", "neću", "te", "kazniti", "s", "onima", "koje", "budem", "kaznio."], "holes": [0, 6, 11, 14, 18, 23], "extras": ["neću", "budem"]}, {"tokens": ["Allahu", "moj,", "Gospodaru", "vjerovjesnika", "Muhammeda,", "oprosti", "mi", "grijehe,", "odagnaj", "moju", "ljutnju", "i", "zaštiti", "me", "od", "kušnji", "koje", "vode", "zabludi."], "holes": [3, 5, 7, 12, 18], "extras": ["ljutnju", "odagnaj"]}, {"tokens": ["Ko", "kontrolira", "ljutnju,", "Allah", "će", "od", "njega", "otkloniti", "kaznu."], "holes": [1, 7], "extras": ["ljutnju,", "Allah"]}, {"tokens": ["Kada", "neko", "od", "vas", "osjeti", "ljutnju,", "neka", "uzme", "abdest", "jer", "je", "ljutnja", "od", "vatre."], "holes": [4, 5, 8, 11], "extras": ["vatre.", "neka"]}, {"tokens": ["Kada", "se", "dvojica", "počnu", "vrijeđati,", "grijeh", "se", "piše", "onome", "ko", "je", "započeo", "sve", "dok", "povrijeđeni", "ne", "pređe", "granicu."], "holes": [2, 4, 11, 14, 17], "extras": ["grijeh", "počnu"]}, {"tokens": ["Zavađeni", "su", "kao", "dva", "šejtana", "koja", "se", "nadmeću."], "holes": [0, 7], "extras": ["šejtana", "dva"]}, {"tokens": ["Ko", "zaustavi", "ljutnju", "koju", "bi", "mogao", "provesti,", "Allah", "će", "mu", "srce", "na", "Kijametskom", "danu", "ispuniti", "sigurnošću", "i", "vjerom."], "holes": [1, 6, 12, 14, 15], "extras": ["ljutnju", "vjerom."]}]}, "7": {"uspjeh": [{"tokens": ["Prednost", "učenjaka", "nad", "pobožnjakom", "je", "kao", "i", "prednost", "punog", "mjeseca", "nad", "ostalim", "zvijezdama."], "holes": [1, 3, 9, 12], "extras": ["Prednost", "ostalim"]}, {"tokens": ["One", "koji", "čine", "dobra", "djela", "čeka", "nagrada,", "i", "više", "od", "toga...!"], "holes": [3, 6], "extras": ["djela", "čeka"]}, {"tokens": ["Ko", "bude", "išao", "putem", "traženja", "znanja,", "Allah", "će", "ga", "uputiti", "na", "jedan", "od", "džennetskih", "puteva."], "holes": [4, 5, 9, 13], "extras": ["puteva.", "Allah"]}, {"tokens": ["Mladiću,", "ja", "ću", "te", "poučiti", "nekoliko", "veoma", "bitnih", "riječi:", "Pazi", "na", "Allaha", "i", "On", "će", "na", "tebe", "paziti,", "pazi", "na", "Allaha", "pa", "ćeš", "Ga", "naći", "uvijek", "u", "svojoj", "blizini", "(kako", "te", "pomaže).", "Ako", "budeš", "od", "koga", "nešto", "tražio,", "traži", "samo", "od", "Allaha,", "a", "ako", "tražiš", "pomoć,", "onda", "je", "samo", "od", "Allaha", "traži."], "holes": [0, 4, 5, 6, 7, 8, 17, 25, 28, 31, 33, 37, 44], "extras": ["Allaha", "pomoć,", "traži", "koga"]}, {"tokens": ["Bože,", "učini", "me", "strpljivim,", "učini", "me", "zahvalnim,", "učini", "me", "u", "mojim", "očima", "malehnim,", "a", "u", "očima", "svijeta", "velikim.", "Bože,", "daj", "mi", "vjerovanje,", "koje", "se", "pokolebati", "ne", "može,", "daj", "mi", "uvjerenje", "iza", "koga", "nema", "nevjerstva", "i", "daj", "mi", "milost", "kojom", "ću", "postići", "slavu", "Tvoje", "počasti", "na", "ovom", "i", "budućem", "svijetu!"], "holes": [3, 6, 12, 16, 21, 24, 29, 33, 37, 40, 43, 47], "extras": ["svijetu!", "velikim.", "kojom", "mojim"]}, {"tokens": ["Znanje", "je", "najveća", "čast."], "holes": [0, 2], "extras": ["čast."]}], "pomozimo-potrebne": [{"tokens": ["Jedni", "drugima", "pomažite", "u", "dobročinstvu", "i", "čestitosti,", "a", "ne", "sudjelujte", "u", "grijehu", "i", "neprijateljstvu."], "holes": [4, 6, 9, 13], "extras": ["pomažite", "drugima"]}, {"tokens": ["Allahov", "Poslanik,", "a.s.,", "je", "rekao", "da", "će", "post", "muslimana", "i", "muslimanke", "biti", "primljen", "tek", "onda", "kada", "izdvoje", "sadekatu-l-fitr", "ako", "su", "u", "mogućnosti."], "holes": [1, 7, 8, 10, 17, 21], "extras": ["primljen", "Allahov"]}, {"tokens": ["O", "čovječe,", "dijeli", "drugima,", "Ja", "ću", "tebi", "udijeliti!"], "holes": [2, 7], "extras": ["čovječe,", "drugima,"]}, {"tokens": ["Najbolja", "je", "sadaka", "gladnog", "nahraniti."], "holes": [3, 4], "extras": ["Najbolja", "sadaka"]}, {"tokens": ["Sadaka", "povećava", "imetak,", "pa", "dijelite", "sadaku", "da", "bi", "vam", "se", "Allah", "smilovao."], "holes": [1, 11], "extras": ["dijelite", "imetak,"]}, {"tokens": ["Sklanjaj", "sa", "puta", "ono", "što", "svijetu", "smeta,", "to", "će", "ti", "se", "ubrojiti", "u", "sadaku."], "holes": [0, 5, 11, 13], "extras": ["smeta,", "puta"]}, {"tokens": ["I", "lijepa", "riječ", "je", "sadaka.", "I", "nekome", "put", "pokazati", "je", "sadaka."], "holes": [2, 8], "extras": ["lijepa", "nekome"]}, {"tokens": ["O", "vjernici,", "udjeljujte", "od", "lijepih", "stvari", "koje", "stječete", "i", "od", "onoga", "što", "vam", "Mi", "iz", "zemlje", "dajemo,", "ne", "izdvajajte", "ono", "što", "ne", "vrijedi", "da", "biste", "to", "udijelili", "kada", "ni", "vi", "sami", "ne", "biste", "to", "primili,", "osim", "zatvorenih", "očiju.", "I", "znajte", "da", "Allah", "nije", "ni", "o", "kome", "ovisan", "i", "da", "je", "hvale", "dostojan."], "holes": [1, 2, 4, 7, 15, 18, 22, 26, 34, 36, 41, 46, 51], "extras": ["dajemo,", "stvari", "znajte", "biste"]}]}};
+let fillRuns={};
+const shownWord=w=>w.replace(/^[^\p{L}\p{N}]+|[^\p{L}\p{N}]+$/gu,'');
+function fillSpec(){return FILL_SPECS[grade][current().id][fillState.quote]}
+function fillKey(){return runKey()+':'+fillState.quote}
+function freshFill(){const spec=fillSpec();return {chosen:Array(spec.holes.length).fill(null),choices:spec.holes.map(i=>shownWord(spec.tokens[i])).concat(spec.extras.map(shownWord)),order:shuffle(Array.from({length:spec.holes.length+spec.extras.length},(_,i)=>i)),selected:0,results:null,reveal:false,solved:false,feedback:''}}
+function activeFill(){return fillRuns[fillKey()]||(fillRuns[fillKey()]=freshFill())}
+function fill(){if(!fillState)fillState={quote:0};const qs=current().quotes;$('#content').innerHTML=`<section class="card"><div class="eyebrow">Dopuni iz ponude</div><h2>Dopuni izostavljene riječi</h2><p class="muted">Klikni prazno mjesto, pa ponuđenu riječ. Broj važnih riječi za dopunu prilagođen je dužini teksta: 2–15. Za ispravku klikni popunjeno mjesto i drugu ponuđenu riječ; ostali odgovori ostaju sačuvani.</p><label for="quoteSelect">Odaberi tekst<select id="quoteSelect">${qs.map((q,i)=>`<option value="${i}" ${i===fillState.quote?'selected':''}>${esc(q[0])}</option>`).join('')}</select></label><div id="exercise"></div></section>`;$('#quoteSelect').onchange=e=>{fillState.quote=+e.target.value;drawFill()};drawFill()}
+function drawFill(){const spec=fillSpec(),s=activeFill(),q=current().quotes[fillState.quote];const completed=current().quotes.filter((_,i)=>fillRuns[runKey()+':'+i]?.solved).length;$('#exercise').innerHTML=`<p class="muted">${esc(q[2])} · ${spec.holes.length} riječi za dopunu</p><p id="fillProgress" class="tag">Samostalno riješeno: ${completed} / ${current().quotes.length}</p><div id="fillText" class="fill-text">${spec.tokens.map((w,i)=>{const slot=spec.holes.indexOf(i);if(slot<0)return esc(w);const id=s.chosen[slot],result=s.results?.[slot];return `<button type="button" class="fill-slot ${slot===s.selected?'active':''} ${result===false?'wrong':result===true?'correct':''}" data-slot="${slot}" aria-pressed="${slot===s.selected}" aria-label="Mjesto ${slot+1}${id===null?', prazno':', '+esc(s.choices[id])}"><small>${slot+1}</small> ${id===null?'Odaberi riječ':esc(s.choices[id])}</button>`}).join(' ')}</div><p class="muted" id="fillSelected">Odabrano mjesto: ${s.selected+1}. Ponuđene riječi uključuju i dodatne prijedloge.</p><div id="fillBank" class="fill-bank" aria-label="Ponuđene riječi">${s.order.filter(id=>!s.chosen.includes(id)).map(id=>`<button type="button" data-choice="${id}">${esc(s.choices[id])}</button>`).join('')}</div><div class="actions"><button type="button" id="returnFill" ${s.chosen[s.selected]===null?'disabled':''}>Vrati odabranu riječ u ponudu</button><button type="button" class="primary" id="checkFill">Provjeri dopunu</button><button type="button" id="resetFill">Izmiješaj ponovo</button><button type="button" id="reveal">Prikaži tekst</button></div><div id="fillFeedback" role="status" aria-live="polite">${s.feedback?`<div class="feedback">${esc(s.feedback)}</div>`:''}</div>${s.reveal?`<blockquote id="fillSolution">${esc(q[1])}</blockquote>`:''}`;
+ document.querySelectorAll('[data-slot]').forEach(b=>b.onclick=()=>{s.selected=+b.dataset.slot;drawFill()});
+ document.querySelectorAll('[data-choice]').forEach(b=>b.onclick=()=>{const slot=s.selected;s.chosen[slot]=+b.dataset.choice;if(s.results)s.results[slot]=null;s.solved=false;s.feedback='Riječ je promijenjena. Provjeri odgovor kada budeš spreman/spremna.';const next=s.chosen.findIndex((id,i)=>i>slot&&id===null),first=s.chosen.indexOf(null);if(next>=0)s.selected=next;else if(first>=0)s.selected=first;drawFill()});
+ $('#returnFill').onclick=()=>{s.chosen[s.selected]=null;if(s.results)s.results[s.selected]=null;s.solved=false;s.feedback='Riječ je vraćena u ponudu. Ostali odgovori su sačuvani.';drawFill()};
+ $('#checkFill').onclick=()=>{s.results=spec.holes.map((i,slot)=>s.chosen[slot]!==null&&norm(s.choices[s.chosen[slot]])===norm(spec.tokens[i]));const correct=s.results.filter(Boolean).length;s.solved=correct===spec.holes.length&&!s.reveal;s.feedback=correct===spec.holes.length?(s.reveal?'Sve je tačno uz prikazano rješenje. Za samostalan pokušaj klikni „Izmiješaj ponovo”.':'Tačno! Samostalno si dopunio/dopunila cijeli tekst.'):`Tačno ${correct} od ${spec.holes.length}. Crveno su označene pogrešne ili prazne dopune. Klikni na njih i pojedinačno ih ispravi.`;drawFill()};
+ $('#resetFill').onclick=()=>{fillRuns[fillKey()]=freshFill();drawFill()};
+ $('#reveal').onclick=()=>{s.reveal=true;s.solved=false;s.feedback='Tekst je prikazan ispod. Ovaj pokušaj se ne računa kao samostalan uspjeh.';drawFill()};
+}
+
 </script></body></html>
